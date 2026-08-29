@@ -358,6 +358,9 @@ const Checkout = {
           })
         });
 
+        /* 404 = a função de pagamento não está publicada neste
+           endereço (ex.: hospedagem só de arquivos estáticos). */
+        if (r.status === 404) throw new Error('gateway-ausente');
         if (!r.ok) throw new Error('gateway');
         const dados = await r.json();
         if (!dados.url) throw new Error('gateway');
@@ -389,6 +392,8 @@ const Checkout = {
       botao.innerHTML = original;
       if (e.message === 'pix-nao-configurado') {
         Aviso.erro('Pagamento ainda não configurado. Confira a chave Pix em config.js.');
+      } else if (e.message === 'gateway-ausente') {
+        Aviso.erro('O pagamento ainda não está ativo nesta versão do site.');
       } else {
         Aviso.erro('Não conseguimos abrir o pagamento. Tente novamente em instantes.');
       }
