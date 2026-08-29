@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="Foto em breve">
+  <rect width="600" height="800" fill="#EAE0D2"/>
+  <rect x="24" y="24" width="552" height="752" fill="none" stroke="#C9B191" stroke-width="1"/>
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">
+    <text x="300" y="382" font-size="62" letter-spacing="10" fill="#0F2137">DUO</text>
+    <text x="300" y="424" font-size="17" letter-spacing="13" fill="#B99653" font-family="Helvetica, Arial, sans-serif">JEANS</text>
+  </g>
+  <line x1="200" y1="416" x2="238" y2="416" stroke="#B99653" stroke-width="1"/>
+  <line x1="362" y1="416" x2="400" y2="416" stroke="#B99653" stroke-width="1"/>
+  <text x="300" y="486" text-anchor="middle" font-size="13" letter-spacing="4"
+        fill="#8A97A5" font-family="Helvetica, Arial, sans-serif">FOTO EM BREVE</text>
+</svg>

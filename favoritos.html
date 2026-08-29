@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meus favoritos · Duo Jeans</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0F2137">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-pagina="favoritos">
+<div data-layout-topo></div>
+<main>
+  <section class="topo-pagina">
+    <div class="container">
+      <nav class="migalhas"><a href="index.html">Início</a><span>/</span><span aria-current="page">Favoritos</span></nav>
+      <h1 class="titulo t-xl">Favoritos</h1>
+      <div class="filete centro"></div>
+      <p class="chamada" style="margin-inline:auto">As peças que você guardou para decidir com calma.</p>
+    </div>
+  </section>
+  <div class="container" style="padding-block:2.5rem">
+    <div class="barra-catalogo"><span class="contagem" data-contagem></span></div>
+    <div class="grade-produtos" data-grade></div>
+  </div>
+</main>
+<div data-layout-base></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/produtos.js"></script>
+<script src="assets/js/loja.js"></script>
+<script src="assets/js/paginas.js"></script>
+<script>function aoCarregarPagina(){ PaginaFavoritos.iniciar(); }</script>
+</body>
+</html>

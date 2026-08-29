@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finalizar compra · Duo Jeans</title>
+<meta name="description" content="Finalize sua compra na Duo Jeans em ambiente seguro.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F2137">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-pagina="checkout" data-beneficios="nao">
+<div data-layout-topo></div>
+
+<main>
+  <section class="topo-pagina">
+    <div class="container">
+      <h1 class="titulo t-lg">Finalizar compra</h1>
+      <div class="filete centro"></div>
+      <p class="chamada" style="margin-inline:auto">
+        Falta pouco. Seus dados trafegam criptografados e o pagamento acontece em ambiente certificado.
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="checkout-layout">
+
+      <!-- ============ COLUNA DO FORMULÁRIO ============ -->
+      <div data-checkout>
+
+        <div class="passos">
+          <div class="passo ativo" data-passo="1"><span class="passo-num">1</span>Identificação</div>
+          <span class="passo-sep"></span>
+          <div class="passo" data-passo="2"><span class="passo-num">2</span>Entrega</div>
+          <span class="passo-sep"></span>
+          <div class="passo" data-passo="3"><span class="passo-num">3</span>Pagamento</div>
+        </div>
+
+        <!-- ---- PASSO 1 ---- -->
+        <section class="painel" data-painel-passo="1">
+          <h2 class="painel-titulo">Seus dados</h2>
+
+          <div class="campo">
+            <label for="ck-nome">Nome completo</label>
+            <input class="entrada" id="ck-nome" name="nome" type="text" autocomplete="name" placeholder="Como está no seu documento">
+            <span class="erro-campo"></span>
+          </div>
+
+          <div class="linha-campos">
+            <div class="campo">
+              <label for="ck-email">E-mail</label>
+              <input class="entrada" id="ck-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com">
+              <span class="erro-campo"></span>
+            </div>
+            <div class="campo">
+              <label for="ck-tel">Celular com DDD</label>
+              <input class="entrada" id="ck-tel" name="telefone" type="tel" autocomplete="tel" data-mascara="tel" placeholder="(11) 99999-9999" inputmode="numeric">
+              <span class="erro-campo"></span>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="ck-cpf">CPF</label>
+            <input class="entrada" id="ck-cpf" name="cpf" type="text" data-mascara="cpf" placeholder="000.000.000-00" inputmode="numeric" style="max-width:260px">
+            <span class="erro-campo"></span>
+            <p class="legenda mt-1" style="text-transform:none;letter-spacing:0;font-size:.72rem">
+              Exigido pela transportadora e pela emissão da nota fiscal.
+            </p>
+          </div>
+
+          <div class="faixa-segura mt-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/><circle cx="12" cy="15.5" r="1.4"/></svg>
+            <div><strong>Seus dados estão protegidos</strong>
+            Usamos suas informações apenas para processar e entregar este pedido, conforme a LGPD.</div>
+          </div>
+
+          <button class="btn btn-principal btn-bloco mt-3" data-continuar="2">Continuar para a entrega</button>
+        </section>
+
+        <!-- ---- PASSO 2 ---- -->
+        <section class="painel oculto" data-painel-passo="2">
+          <h2 class="painel-titulo">Onde entregamos</h2>
+
+          <label class="opcao-radio selecionada" data-tipo-entrega="entrega">
+            <input type="radio" name="tipoEntrega" value="entrega" checked>
+            <div class="opcao-corpo">
+              <div class="opcao-titulo"><span>Receber em casa</span></div>
+              <div class="opcao-desc" data-texto-entrega></div>
+            </div>
+          </label>
+
+          <label class="opcao-radio" data-tipo-entrega="retirada" data-opcao-retirada>
+            <input type="radio" name="tipoEntrega" value="retirada">
+            <div class="opcao-corpo">
+              <div class="opcao-titulo"><span>Retirada em mãos</span><span class="opcao-tag">Sem frete</span></div>
+              <div class="opcao-desc" data-texto-retirada></div>
+            </div>
+          </label>
+
+          <div data-campos-entrega class="mt-3">
+            <div class="campo" style="max-width:260px">
+              <label for="ck-cep">CEP</label>
+              <input class="entrada" id="ck-cep" name="cep" type="text" data-mascara="cep" placeholder="00000-000" inputmode="numeric" autocomplete="postal-code">
+              <span class="erro-campo"></span>
+              <p class="legenda mt-1" style="text-transform:none;letter-spacing:0;font-size:.74rem;color:var(--sucesso)" data-cep-status></p>
+            </div>
+
+            <div class="linha-campos-3">
+              <div class="campo">
+                <label for="ck-rua">Rua / Avenida</label>
+                <input class="entrada" id="ck-rua" name="rua" type="text" autocomplete="address-line1">
+                <span class="erro-campo"></span>
+              </div>
+              <div class="campo">
+                <label for="ck-num">Número</label>
+                <input class="entrada" id="ck-num" name="numero" type="text">
+                <span class="erro-campo"></span>
+              </div>
+              <div class="campo">
+                <label for="ck-comp">Complemento</label>
+                <input class="entrada" id="ck-comp" name="complemento" type="text" placeholder="Opcional">
+              </div>
+            </div>
+
+            <div class="linha-campos-3">
+              <div class="campo">
+                <label for="ck-bairro">Bairro</label>
+                <input class="entrada" id="ck-bairro" name="bairro" type="text">
+                <span class="erro-campo"></span>
+              </div>
+              <div class="campo">
+                <label for="ck-cidade">Cidade</label>
+                <input class="entrada" id="ck-cidade" name="cidade" type="text">
+                <span class="erro-campo"></span>
+              </div>
+              <div class="campo">
+                <label for="ck-uf">UF</label>
+                <input class="entrada" id="ck-uf" name="uf" type="text" maxlength="2" style="text-transform:uppercase">
+                <span class="erro-campo"></span>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="ck-ref">Ponto de referência</label>
+              <input class="entrada" id="ck-ref" name="referencia" type="text" placeholder="Opcional — ajuda na entrega">
+            </div>
+          </div>
+
+          <div class="flex gap mt-3">
+            <button class="btn btn-contorno" data-voltar="1">Voltar</button>
+            <button class="btn btn-principal" style="flex:1" data-continuar="3">Continuar para o pagamento</button>
+          </div>
+        </section>
+
+        <!-- ---- PASSO 3 ---- -->
+        <section class="painel oculto" data-painel-passo="3">
+          <h2 class="painel-titulo">Como você prefere pagar</h2>
+
+          <div data-metodos></div>
+
+          <div class="faixa-segura mt-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l8 3v6c0 5-3.4 8.9-8 10-4.6-1.1-8-5-8-10v-6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></svg>
+            <div><strong>Pagamento em ambiente certificado</strong>
+            Você é levada para a tela protegida do meio de pagamento. Os dados do seu cartão
+            não passam por este site e não ficam guardados aqui.</div>
+          </div>
+
+          <div class="flex gap mt-3">
+            <button class="btn btn-contorno" data-voltar="2">Voltar</button>
+            <button class="btn btn-principal" style="flex:1" data-finalizar>Ir para o pagamento</button>
+          </div>
+
+          <p class="legenda mt-3" style="text-transform:none;letter-spacing:0;font-size:.74rem;text-align:center">
+            Ao finalizar você concorda com os <a href="termos.html" style="color:var(--dourado)">termos de uso</a>
+            e a <a href="privacidade.html" style="color:var(--dourado)">política de privacidade</a>.
+          </p>
+        </section>
+
+      </div>
+
+      <!-- ============ RESUMO ============ -->
+      <aside class="checkout-resumo" data-resumo-coluna>
+        <div class="painel">
+          <h2 class="painel-titulo">Resumo do pedido</h2>
+
+          <div class="cupom-form">
+            <input class="entrada" name="cupom" type="text" placeholder="Cupom de desconto" aria-label="Cupom de desconto">
+            <button class="btn btn-contorno btn-p" data-aplicar-cupom>Aplicar</button>
+          </div>
+
+          <div data-resumo></div>
+        </div>
+
+        <div class="painel">
+          <div class="confianca-produto" style="margin:0;border:0;padding:0;background:none">
+            <div class="confianca-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a8 8 0 0113.6-4.6L21 8"/><path d="M21 4v4.5h-4.5"/><path d="M21 15a8 8 0 01-13.6 4.6L3 16"/><path d="M3 20v-4.5h4.5"/></svg>
+              <div><strong>Primeira troca grátis</strong><br>7 dias corridos após receber.</div>
+            </div>
+            <div class="confianca-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/><circle cx="12" cy="15.5" r="1.4"/></svg>
+              <div><strong>Conexão criptografada</strong><br>Certificado SSL em todas as páginas.</div>
+            </div>
+            <div class="confianca-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.6v.6"/></svg>
+              <div><strong>Precisa de ajuda?</strong><br><span data-ajuda-checkout></span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<div data-layout-base></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/produtos.js"></script>
+<script src="assets/js/loja.js"></script>
+<script src="assets/js/pix.js"></script>
+<script src="assets/js/checkout.js"></script>
+<script>
+function aoCarregarPagina() {
+  document.querySelector('[data-texto-entrega]').textContent =
+    'Frete calculado pelo seu CEP. ' + CONFIG.frete.prazoTexto + '.';
+
+  const retirada = document.querySelector('[data-opcao-retirada]');
+  if (CONFIG.frete.retirada.ativo) {
+    document.querySelector('[data-texto-retirada]').textContent = CONFIG.frete.retirada.detalhe;
+  } else {
+    retirada.remove();
+  }
+
+  document.querySelector('[data-ajuda-checkout]').innerHTML =
+    'Fale com a gente pelo <a href="' + CONFIG.whatsappLink('Olá! Estou finalizando um pedido no site e preciso de ajuda.') +
+    '" target="_blank" rel="noopener" style="color:var(--dourado)">WhatsApp</a> ou por ' +
+    '<a href="mailto:' + CONFIG.loja.email + '" style="color:var(--dourado)">e-mail</a>.';
+
+  if (U.param('erro')) {
+    Aviso.erro('O pagamento não foi concluído. Você pode tentar de novo ou escolher outra forma.');
+  }
+
+  Checkout.iniciar();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seu pedido · Duo Jeans</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F2137">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-pagina="pedido" data-beneficios="nao">
+<div data-layout-topo></div>
+
+<main>
+  <div class="container container-estreito" data-pedido></div>
+</main>
+
+<div data-layout-base></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/produtos.js"></script>
+<script src="assets/js/loja.js"></script>
+<script src="assets/js/pix.js"></script>
+<script src="assets/js/checkout.js"></script>
+<script>
+function aoCarregarPagina() {
+  /* Voltando do gateway com pagamento aprovado ou pendente:
+     a sacola já cumpriu o papel dela. */
+  const status = U.param('status');
+  if (status === 'aprovado' || status === 'pendente') Sacola.limpar();
+
+  PaginaPedido.iniciar();
+
+  if (status === 'aprovado') {
+    Aviso.mostrar('Pagamento aprovado. Já estamos preparando seu pedido.');
+  } else if (status === 'pendente') {
+    Aviso.mostrar('Pagamento em processamento. Avisamos assim que for confirmado.');
+  }
+}
+</script>
+</body>
+</html>

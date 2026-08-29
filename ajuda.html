@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Central de ajuda · Duo Jeans</title>
+<meta name="description" content="Prazos de entrega, trocas e devoluções, formas de pagamento e guia de medidas da Duo Jeans.">
+<meta name="theme-color" content="#0F2137">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-pagina="ajuda">
+<div data-layout-topo></div>
+
+<main>
+  <section class="topo-pagina">
+    <div class="container">
+      <nav class="migalhas"><a href="index.html">Início</a><span>/</span><span aria-current="page">Ajuda</span></nav>
+      <h1 class="titulo t-xl">Central de ajuda</h1>
+      <div class="filete centro"></div>
+      <p class="chamada" style="margin-inline:auto">Tudo o que você precisa saber antes e depois de comprar.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="conteudo">
+
+      <h2 id="entrega">Prazos e entrega</h2>
+      <p data-prazo-geral></p>
+      <p>O prazo começa a contar a partir da <strong>confirmação do pagamento</strong>, não da data do pedido. No Pix a confirmação é imediata; no cartão costuma levar alguns minutos; no boleto, até 3 dias úteis.</p>
+      <p>Separamos e postamos seu pedido em até <strong>2 dias úteis</strong> após a confirmação. Assim que sai daqui, você recebe o código de rastreio por e-mail.</p>
+
+      <h3>Valores por região</h3>
+      <table class="tabela-medidas" data-tabela-frete></table>
+      <p class="mt-2" data-frete-gratis></p>
+
+      <h2 id="trocas">Trocas e devoluções</h2>
+      <div class="cartao-destaque">
+        <p data-politica-troca></p>
+      </div>
+
+      <h3>Troca de tamanho</h3>
+      <p>Errou o tamanho? Acontece. Fale com a gente em até <strong>7 dias corridos</strong> depois de receber, com a peça sem uso, sem lavar e com a etiqueta presa. A primeira troca é por nossa conta — enviamos o código de postagem e você só leva no correio.</p>
+
+      <h3>Desistência da compra</h3>
+      <p>Pelo Código de Defesa do Consumidor, você pode desistir da compra em até <strong>7 dias corridos</strong> após o recebimento, sem precisar dar motivo. Devolvemos o valor integral, incluindo o frete, pelo mesmo meio de pagamento usado.</p>
+
+      <h3>Peça com defeito</h3>
+      <p>Se chegou algo errado ou com defeito de fabricação, você tem <strong>30 dias</strong> para nos avisar. Mande uma foto pelo WhatsApp ou e-mail que resolvemos rápido — troca ou reembolso, você escolhe.</p>
+
+      <h3>Como o dinheiro volta</h3>
+      <ul>
+        <li><strong>Cartão de crédito:</strong> o estorno aparece em até duas faturas, conforme o prazo do seu banco.</li>
+        <li><strong>Pix:</strong> devolvemos em até 5 dias úteis na conta de origem.</li>
+        <li><strong>Boleto:</strong> devolvemos por transferência, em até 5 dias úteis, na conta que você informar.</li>
+      </ul>
+
+      <h2 id="pagamento">Formas de pagamento</h2>
+      <ul data-formas-pagamento></ul>
+      <p>O pagamento é processado em ambiente certificado. Os dados do seu cartão não passam por este site. <a href="seguranca.html">Entenda como protegemos sua compra</a>.</p>
+
+      <h2 id="medidas">Guia de medidas</h2>
+      <p>Meça sobre a pele, com a fita paralela ao chão e sem apertar. A <strong>cintura</strong> é na parte mais fina do tronco; o <strong>quadril</strong>, na parte mais larga.</p>
+      <div data-tabelas-medidas></div>
+      <p class="mt-2" data-dica-medidas></p>
+
+      <h2 id="cuidados">Como cuidar do seu jeans</h2>
+      <ul>
+        <li>Lave sempre <strong>do avesso</strong> e em água fria — preserva a cor e a lavagem.</li>
+        <li>Lave com peças de cor parecida, principalmente nas primeiras vezes.</li>
+        <li>Evite a secadora. O calor encolhe o algodão e deforma a modelagem.</li>
+        <li>Seque à sombra, pendurado pela cintura.</li>
+        <li>Não use alvejante, nem em manchas localizadas.</li>
+        <li>Jeans não precisa de lavagem a cada uso. Arejar entre um uso e outro aumenta a vida da peça.</li>
+      </ul>
+
+      <h2 id="pedido">Acompanhar meu pedido</h2>
+      <p>Assim que o pedido é postado, enviamos o código de rastreio para o seu e-mail. Se não encontrar, confira a caixa de spam ou fale com a gente informando o número do pedido.</p>
+
+      <h2>Ainda com dúvida?</h2>
+      <p>Fale com a gente. Respondemos <span data-horario></span>.</p>
+      <p data-contatos></p>
+
+    </div>
+  </div>
+</main>
+
+<div data-layout-base></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/produtos.js"></script>
+<script src="assets/js/loja.js"></script>
+<script>
+function aoCarregarPagina() {
+  const moeda = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+  document.querySelector('[data-prazo-geral]').innerHTML =
+    'Enviamos para todo o Brasil pelos Correios. O prazo estimado é de <strong>' +
+    CONFIG.frete.prazoTexto + '</strong>. Você calcula o valor e o prazo exatos do seu CEP ' +
+    'direto na página do produto ou no carrinho.';
+
+  /* Tabela de frete montada a partir da configuração */
+  document.querySelector('[data-tabela-frete]').innerHTML =
+    '<thead><tr><th>Região</th><th>Valor</th><th>Prazo</th></tr></thead><tbody>' +
+    CONFIG.frete.tabela.map(f =>
+      '<tr><td>' + f.nome + '</td><td>' + moeda(f.valor) + '</td><td>' + f.prazo + '</td></tr>').join('') +
+    (CONFIG.frete.retirada.ativo
+      ? '<tr><td>' + CONFIG.frete.retirada.texto + '</td><td>Grátis</td><td>A combinar</td></tr>' : '') +
+    '</tbody>';
+
+  document.querySelector('[data-frete-gratis]').innerHTML =
+    '<strong>Frete grátis</strong> para todo o Brasil nas compras acima de <strong>' +
+    moeda(CONFIG.frete.gratisAcima) + '</strong>.';
+
+  document.querySelector('[data-politica-troca]').innerHTML = '<strong>Nossa política:</strong> ' + CONFIG.trocas;
+
+  const parc = CONFIG.pagamento.mercadopago.parcelas;
+  const descPix = Math.round(CONFIG.pagamento.pix.desconto * 100);
+  document.querySelector('[data-formas-pagamento]').innerHTML =
+    '<li><strong>Cartão de crédito</strong> — em até ' + parc + 'x sem juros (parcela mínima de ' +
+      moeda(CONFIG.pagamento.mercadopago.parcelaMinima) + '). Visa, Mastercard, Elo, American Express e Hipercard.</li>' +
+    '<li><strong>Pix</strong> — com ' + descPix + '% de desconto e aprovação imediata.</li>' +
+    '<li><strong>Boleto bancário</strong> — compensa em até 3 dias úteis. O pedido é separado depois da compensação.</li>';
+
+  /* Tabelas de medidas, iguais às do guia dos produtos */
+  const tabela = (t) =>
+    '<h3>' + t.titulo + '</h3><table class="tabela-medidas"><thead><tr>' +
+    t.colunas.map(c => '<th>' + c + '</th>').join('') + '</tr></thead><tbody>' +
+    t.linhas.map(l => '<tr>' + l.map(c => '<td>' + c + '</td>').join('') + '</tr>').join('') +
+    '</tbody></table>';
+  document.querySelector('[data-tabelas-medidas]').innerHTML =
+    tabela(MEDIDAS.numerico) + tabela(MEDIDAS.letra);
+  document.querySelector('[data-dica-medidas]').innerHTML = '<strong>Dica da Duo:</strong> ' + MEDIDAS.dica;
+
+  document.querySelector('[data-horario]').textContent = CONFIG.loja.atendimento;
+  document.querySelector('[data-contatos]').innerHTML =
+    'E-mail: <a href="mailto:' + CONFIG.loja.email + '">' + CONFIG.loja.email + '</a><br>' +
+    'WhatsApp: <a href="' + CONFIG.whatsappLink('Olá! Preciso de ajuda com um pedido.') +
+    '" target="_blank" rel="noopener">falar com o atendimento</a><br>' +
+    'Instagram: <a href="' + CONFIG.instagramLink + '" target="_blank" rel="noopener">@' + CONFIG.loja.instagram + '</a>';
+}
+</script>
+</body>
+</html>

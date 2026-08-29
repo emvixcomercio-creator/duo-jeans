@@ -1,0 +1,85 @@
+# ============================================================
+#  DUO JEANS — configuração de publicação (Netlify)
+# ============================================================
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# A função de pagamento precisa ler o catálogo e a configuração
+# para recalcular os preços no servidor.
+[functions]
+  included_files = ["assets/js/produtos.js", "assets/js/config.js"]
+  node_bundler = "esbuild"
+
+# ------------------------------------------------------------
+#  CABEÇALHOS DE SEGURANÇA
+#  Aplicados a todas as páginas do site.
+# ------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Só permite carregar recursos das origens listadas.
+    # É o que impede que um script estranho rode na sua loja.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://viacep.com.br; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+
+    # Obriga o navegador a usar sempre HTTPS neste domínio.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Impede que a loja seja embutida em um site falso (clickjacking).
+    X-Frame-Options = "DENY"
+
+    # Impede o navegador de "adivinhar" o tipo de um arquivo.
+    X-Content-Type-Options = "nosniff"
+
+    # Não vaza o endereço da página ao sair para outro site.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Desliga recursos que a loja não usa.
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+    Cross-Origin-Opener-Policy = "same-origin"
+
+# Nada de cache nas páginas de compra
+[[headers]]
+  for = "/checkout.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+
+[[headers]]
+  for = "/pedido.html"
+  [headers.values]
+    Cache-Control = "no-store, must-revalidate"
+
+# Imagens podem ficar muito tempo em cache: quando você sobe uma
+# peça nova, o arquivo tem nome novo.
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# JÁ o catálogo e os estilos você edita direto. Se ficarem em cache
+# longo, a cliente continua vendo o preço antigo por semanas.
+# Aqui o navegador sempre pergunta ao servidor se mudou.
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# As páginas também são revalidadas sempre
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# HTTP sempre vira HTTPS
+[[redirects]]
+  from = "http://duojeans.com.br/*"
+  to = "https://duojeans.com.br/:splat"
+  status = 301
+  force = true

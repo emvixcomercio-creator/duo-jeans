@@ -1,0 +1,18 @@
+# Fotos originais da sessão — não precisam ir para o site.
+# São grandes (29 MB) e as versões usadas na loja já estão em
+# assets/img/produtos/. Guarde esta pasta como backup.
+catálogo/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+node_modules/
+.netlify/
+
+# Pasta temporária de publicação
+_publicar/
+_publicar.zip
+
+# Artefatos de teste
+.playwright-mcp/
+*.png.test

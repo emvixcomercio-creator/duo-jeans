@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coleção · Duo Jeans</title>
+<meta name="description" content="Calças, shorts, saias e jaquetas jeans femininas. Filtre por modelagem, tamanho e preço. Frete grátis acima de R$ 399.">
+<meta name="theme-color" content="#0F2137">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-pagina="colecao">
+<div data-layout-topo></div>
+
+<main>
+  <section class="topo-pagina">
+    <div class="container">
+      <nav class="migalhas" aria-label="Você está em">
+        <a href="index.html">Início</a><span>/</span>
+        <span aria-current="page" data-migalha-atual>Coleção</span>
+      </nav>
+      <h1 class="titulo t-xl" data-titulo-pagina>Coleção</h1>
+      <div class="filete centro"></div>
+      <p class="chamada" style="margin-inline:auto" data-sub-pagina></p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="layout-catalogo">
+
+      <aside class="filtros" aria-label="Filtros">
+        <div class="flex entre centro-v mb-3">
+          <span class="legenda">Filtrar</span>
+          <button class="icone-btn" data-fechar aria-label="Fechar filtros">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+        <div data-filtros></div>
+      </aside>
+
+      <div>
+        <div class="barra-catalogo">
+          <span class="contagem" data-contagem></span>
+          <div class="flex gap-p centro-v">
+            <button class="btn btn-contorno btn-p btn-filtros-movel" data-abrir-filtros>Filtros</button>
+            <select class="entrada" data-ordem style="width:auto;padding-block:.6rem;font-size:.8rem" aria-label="Ordenar por">
+              <option value="novidade">Novidades primeiro</option>
+              <option value="menor">Menor preço</option>
+              <option value="maior">Maior preço</option>
+              <option value="nome">Nome (A–Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tags-ativas" data-tags></div>
+        <div class="grade-produtos" data-grade></div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<div data-layout-base></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/produtos.js"></script>
+<script src="assets/js/loja.js"></script>
+<script src="assets/js/paginas.js"></script>
+<script>function aoCarregarPagina(){ PaginaCatalogo.iniciar(); }</script>
+</body>
+</html>

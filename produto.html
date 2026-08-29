@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produto · Duo Jeans</title>
+<meta name="description" content="Jeans feminino Duo Jeans. Caimento impecável, tecidos de qualidade e primeira troca grátis.">
+<meta name="theme-color" content="#0F2137">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-pagina="produto">
+<div data-layout-topo></div>
+
+<main data-produto>
+  <div class="container" style="padding-top:1.6rem">
+    <nav class="migalhas" style="justify-content:flex-start" data-migalhas aria-label="Você está em"></nav>
+  </div>
+
+  <div class="container">
+    <div class="produto-layout">
+      <div class="galeria" data-galeria></div>
+      <div class="produto-info" data-info></div>
+    </div>
+  </div>
+
+  <section class="secao secao-creme" data-secao-relacionados>
+    <div class="container">
+      <div class="cabecalho-secao">
+        <p class="antetitulo">Combina com</p>
+        <h2 class="titulo t-lg">Você também pode gostar</h2>
+        <div class="filete centro"></div>
+      </div>
+      <div class="grade-produtos colunas-4" data-relacionados></div>
+    </div>
+  </section>
+</main>
+
+<div data-layout-base></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/produtos.js"></script>
+<script src="assets/js/loja.js"></script>
+<script src="assets/js/paginas.js"></script>
+<script>function aoCarregarPagina(){ PaginaProduto.iniciar(); }</script>
+</body>
+</html>
