@@ -1835,8 +1835,8 @@
   overflow-y: auto;
   padding: clamp(1.6rem, 4vw, 2.8rem);
   background:
-    radial-gradient(120% 90% at 15% 0%, #1B3453 0%, var(--marinho) 55%, var(--marinho-escuro) 100%);
-  border: 1px solid rgba(185, 150, 83, .45);
+    radial-gradient(125% 95% at 12% 0%, #FCF6E9 0%, var(--champanhe) 52%, #E7D5B3 100%);
+  border: 1px solid rgba(185, 150, 83, .55);
   border-radius: var(--raio-md);
   box-shadow: var(--sombra-lg);
   transform: translateY(18px) scale(.97);
@@ -1852,10 +1852,10 @@
   place-items: center;
   width: 34px; height: 34px;
   border-radius: 50%;
-  color: rgba(244, 237, 227, .6);
+  color: var(--texto-suave);
   transition: var(--transicao);
 }
-.roleta-fechar:hover { background: rgba(244, 237, 227, .12); color: var(--creme); }
+.roleta-fechar:hover { background: rgba(15, 33, 55, .08); color: var(--marinho); }
 .roleta-fechar svg { width: 17px; height: 17px; }
 
 /* ---- Disco ---- */
@@ -1870,8 +1870,8 @@
 .roleta-disco {
   width: 100%;
   transform: rotate(0deg);
-  transition: transform 4.8s cubic-bezier(.12, .78, .12, 1);
-  filter: drop-shadow(0 14px 34px rgba(0, 0, 0, .45));
+  transition: transform 5s cubic-bezier(.33, 0, .4, 1);
+  filter: drop-shadow(0 10px 24px rgba(120, 92, 44, .22));
 }
 
 /* Seta dourada no topo */
@@ -1895,11 +1895,6 @@
   border-radius: 50%;
   box-shadow: inset 0 -2px 4px rgba(0, 0, 0, .25);
 }
-.roleta.rodando .roleta-seta { animation: setaTremendo .12s linear infinite; }
-@keyframes setaTremendo {
-  0%, 100% { transform: translateX(-50%) rotate(0deg); }
-  50%      { transform: translateX(-50%) rotate(-7deg); }
-}
 
 /* ---- Lado do texto ---- */
 .roleta-lado .marca-duo   { font-size: 1.3rem; }
@@ -1908,22 +1903,24 @@
 .roleta-texto {
   font-size: .86rem;
   line-height: 1.75;
-  color: rgba(244, 237, 227, .74);
+  color: var(--texto-suave);
   max-width: 40ch;
 }
 
 .roleta-entrada {
-  background: rgba(255, 255, 255, .07);
-  border-color: rgba(244, 237, 227, .3);
-  color: var(--creme);
+  background: rgba(255, 255, 255, .82);
+  border-color: rgba(185, 150, 83, .5);
+  color: var(--texto);
 }
-.roleta-entrada::placeholder { color: rgba(244, 237, 227, .42); }
+.roleta-entrada::placeholder { color: var(--texto-fraco); }
 .roleta-entrada:focus {
-  border-color: var(--dourado);
-  box-shadow: 0 0 0 3px rgba(185, 150, 83, .2);
+  background: #fff;
+  border-color: var(--marinho);
+  box-shadow: 0 0 0 3px rgba(15, 33, 55, .09);
 }
-.roleta .campo.tem-erro .roleta-entrada { border-color: #E2857C; }
-.roleta .erro-campo { color: #F0A9A2; }
+.roleta .campo label { color: var(--texto-suave); }
+.roleta .campo.tem-erro .roleta-entrada { border-color: var(--erro); }
+.roleta .erro-campo { color: var(--erro); }
 
 .roleta-dispensar {
   display: block;
@@ -1932,16 +1929,16 @@
   font-size: .68rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(244, 237, 227, .5);
+  color: var(--texto-fraco);
   transition: color var(--transicao);
 }
-.roleta-dispensar:hover { color: var(--creme); }
+.roleta-dispensar:hover { color: var(--marinho); }
 
 .roleta-aviso {
   margin-top: 1rem;
   font-size: .66rem;
   line-height: 1.6;
-  color: rgba(244, 237, 227, .38);
+  color: var(--texto-fraco);
 }
 
 /* ---- Cupom ganho ---- */
@@ -1956,18 +1953,18 @@
   display: grid;
   place-items: center;
   padding: .85rem 1rem;
-  background: rgba(185, 150, 83, .14);
+  background: rgba(255, 255, 255, .6);
   border: 1px dashed var(--dourado);
   border-radius: var(--raio);
   font-family: var(--serif);
   font-size: 1rem;
   letter-spacing: .18em;
-  color: var(--dourado-claro);
+  color: var(--marinho);
 }
 .roleta-cupom button {
   padding: 0 1.1rem;
-  background: var(--dourado);
-  color: var(--marinho);
+  background: var(--marinho);
+  color: var(--creme);
   border-radius: var(--raio);
   font-size: .66rem;
   font-weight: 600;
@@ -1975,14 +1972,14 @@
   text-transform: uppercase;
   transition: var(--transicao);
 }
-.roleta-cupom button:hover { background: var(--dourado-claro); }
+.roleta-cupom button:hover { background: var(--marinho-claro); }
 
 .roleta-validade {
   margin-top: .7rem;
   font-size: .7rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(244, 237, 227, .45);
+  color: var(--texto-fraco);
 }
 
 /* ---- Celular ---- */
@@ -2007,5 +2004,4 @@
 /* Menos movimento para quem pediu menos movimento */
 @media (prefers-reduced-motion: reduce) {
   .roleta-disco { transition-duration: 1.2s; }
-  .roleta.rodando .roleta-seta { animation: none; }
 }

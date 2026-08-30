@@ -110,10 +110,14 @@ const CONFIG = {
     'DUO10':     { tipo: 'percentual', valor: 0.10, descricao: '10% de desconto' },
     'PRIMEIRA':  { tipo: 'percentual', valor: 0.15, descricao: '15% na primeira compra' },
     'DUO20':     { tipo: 'percentual', valor: 0.20, descricao: '20% de desconto' },
-    'FRETEDUO':  { tipo: 'frete',      valor: 1,    descricao: 'Frete grátis' },
-    'BRINDEDUO': { tipo: 'brinde',     valor: 0,    descricao: 'Brinde surpresa no seu pedido' },
-    'ECOBAGDUO': { tipo: 'brinde',     valor: 0,    descricao: 'Ecobag da Duo de cortesia' },
-    'CHAVEIRO':  { tipo: 'brinde',     valor: 0,    descricao: 'Chaveiro da Duo de cortesia' }
+    'FRETEDUO':  { tipo: 'frete',      valor: 1,    descricao: 'Frete grátis' }
+
+    /* Quando você tiver brindes para dar, basta criar o cupom aqui e
+       incluir na roleta. O brinde não abate valor: aparece no resumo
+       do pedido como cortesia, para você separar e mandar junto.
+       Exemplo:
+       , 'ECOBAGDUO': { tipo: 'brinde', valor: 0, descricao: 'Ecobag da Duo de cortesia' }
+    */
   },
 
   /* ============================================================
@@ -137,18 +141,18 @@ const CONFIG = {
     // As 8 fatias da roleta, na ordem em que aparecem.
     // 'cupom' precisa existir na lista de cupons acima.
     premios: [
-      { rotulo: '5% OFF',       cupom: 'DUO5',      peso: 16 },
-      { rotulo: 'FRETE GRÁTIS', cupom: 'FRETEDUO',  peso: 12 },
-      { rotulo: '10% OFF',      cupom: 'DUO10',     peso: 14 },
-      { rotulo: 'ECOBAG',       cupom: 'ECOBAGDUO', peso: 5  },
-      { rotulo: '5% OFF',       cupom: 'DUO5',      peso: 16 },
-      { rotulo: '15% OFF',      cupom: 'PRIMEIRA',  peso: 6  },
-      { rotulo: 'FRETE GRÁTIS', cupom: 'FRETEDUO',  peso: 12 },
-      { rotulo: 'CHAVEIRO',     cupom: 'CHAVEIRO',  peso: 7  },
-      { rotulo: '10% OFF',      cupom: 'DUO10',     peso: 14 },
-      { rotulo: '20% OFF',      cupom: 'DUO20',     peso: 2  },
-      { rotulo: '5% OFF',       cupom: 'DUO5',      peso: 16 },
-      { rotulo: 'BRINDE',       cupom: 'BRINDEDUO', peso: 6  }
+      { rotulo: '5% OFF',       cupom: 'DUO5',     peso: 17 },
+      { rotulo: 'FRETE GRÁTIS', cupom: 'FRETEDUO', peso: 11 },
+      { rotulo: '10% OFF',      cupom: 'DUO10',    peso: 13 },
+      { rotulo: '5% OFF',       cupom: 'DUO5',     peso: 17 },
+      { rotulo: '15% OFF',      cupom: 'PRIMEIRA', peso: 6  },
+      { rotulo: 'FRETE GRÁTIS', cupom: 'FRETEDUO', peso: 11 },
+      { rotulo: '10% OFF',      cupom: 'DUO10',    peso: 13 },
+      { rotulo: '5% OFF',       cupom: 'DUO5',     peso: 17 },
+      { rotulo: '20% OFF',      cupom: 'DUO20',    peso: 2  },
+      { rotulo: 'FRETE GRÁTIS', cupom: 'FRETEDUO', peso: 11 },
+      { rotulo: '10% OFF',      cupom: 'DUO10',    peso: 13 },
+      { rotulo: '15% OFF',      cupom: 'PRIMEIRA', peso: 6  }
     ]
   },
 

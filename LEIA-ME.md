@@ -164,22 +164,19 @@ atual, as chances reais são:
 
 | Prêmio | Chance |
 |---|---|
-| 5% OFF | 38,1% |
-| 10% OFF | 22,2% |
-| Frete grátis | 19,0% |
-| Chaveiro | 5,6% |
-| 15% OFF | 4,8% |
-| Brinde surpresa | 4,8% |
-| Ecobag | 4,0% |
-| 20% OFF | 1,6% |
+| 5% OFF | 37,2% |
+| 10% OFF | 28,5% |
+| Frete grátis | 24,1% |
+| 15% OFF | 8,8% |
+| 20% OFF | 1,5% |
 
 O sorteio é **de verdade**: a roleta gira até parar exatamente na fatia sorteada, e todo
 cupom que ela entrega funciona. Não existe fatia de "não ganhou".
 
-### Antes de ligar, confirme que você consegue honrar
-Os prêmios de brinde (ecobag, chaveiro, brinde surpresa) aparecem no resumo do pedido como
-**cortesia** — você precisa separar e mandar junto. Se ainda não tem esses brindes,
-troque por descontos ou tire a fatia da lista.
+### Brindes, se um dia você quiser dar
+A roleta hoje só entrega desconto e frete grátis. O site já sabe lidar com brinde: basta
+criar um cupom do tipo `brinde` em `cupons` e incluir na roleta. Ele não abate valor —
+aparece no resumo do pedido como **cortesia**, para você separar e mandar junto.
 
 ### Mudar os prêmios
 Edite a lista `premios`. Cada `cupom` precisa existir no bloco `cupons` logo acima —

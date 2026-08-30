@@ -65,10 +65,10 @@ const Roleta = {
       const [x1, y1] = ponto(a1, r);
       const [x2, y2] = ponto(a2, r);
       const grande = fatia > 180 ? 1 : 0;
-      const cor = i % 2 === 0 ? 'var(--marinho)' : '#FBF7F1';
+      const cor = i % 2 === 0 ? 'var(--marinho)' : '#FFFDF8';
       fatias += '<path d="M' + cx + ',' + cy + ' L' + x1.toFixed(2) + ',' + y1.toFixed(2) +
                 ' A' + r + ',' + r + ' 0 ' + grande + ',1 ' + x2.toFixed(2) + ',' + y2.toFixed(2) + ' Z" ' +
-                'fill="' + cor + '" stroke="#B99653" stroke-width="0.8"/>';
+                'fill="' + cor + '" stroke="#C9A461" stroke-width="0.7"/>';
 
       /* O rótulo corre no sentido do raio (do miolo para a borda),
          que é onde cabe texto longo tipo "FRETE GRÁTIS".
@@ -76,7 +76,7 @@ const Roleta = {
          mesmo; na metade de baixo ele leva 180° a mais, senão sairia
          de cabeça para baixo. */
       const meio = a1 + fatia / 2;
-      const corTexto = i % 2 === 0 ? '#F4EDE3' : '#0F2137';
+      const corTexto = i % 2 === 0 ? '#F7EFE2' : '#0F2137';
       const rotulo = premios[i].rotulo || '';
       const tamanho = rotulo.length > 10 ? 7.5 : (rotulo.length > 7 ? 8.5 : 10);
 
@@ -93,7 +93,8 @@ const Roleta = {
 
     return '' +
       '<svg viewBox="0 0 200 200" class="roleta-svg" aria-hidden="true">' +
-        '<circle cx="100" cy="100" r="98" fill="#B99653"/>' +
+        '<circle cx="100" cy="100" r="99" fill="#B08843"/>' +
+        '<circle cx="100" cy="100" r="96.5" fill="#D8B36A"/>' +
         fatias + textos +
         '<circle cx="100" cy="100" r="19" fill="var(--marinho)" stroke="#B99653" stroke-width="1.6"/>' +
         '<text x="100" y="104" text-anchor="middle" fill="#B99653" font-size="13" ' +
@@ -130,21 +131,21 @@ const Roleta = {
 
         '<div class="roleta-lado">' +
           '<div data-roleta-passo="convite">' +
-            '<span class="marca clara"><span class="marca-duo">DUO</span><span class="marca-jeans">JEANS</span></span>' +
-            '<p class="antetitulo escura mt-3">Só para você</p>' +
-            '<h2 class="titulo t-lg" style="color:var(--creme)">Gire e ganhe</h2>' +
+            '<span class="marca"><span class="marca-duo">DUO</span><span class="marca-jeans">JEANS</span></span>' +
+            '<p class="antetitulo mt-3">Só para você</p>' +
+            '<h2 class="titulo t-lg">Gire e ganhe</h2>' +
             '<div class="filete"></div>' +
-            '<p class="roleta-texto">Um desconto ou brinde para começar a sua primeira compra na Duo. ' +
+            '<p class="roleta-texto">Um desconto para estrear a sua primeira compra na Duo. ' +
               'Todas as fatias premiam — é só girar.</p>' +
             (cfg.pedirEmail
               ? '<div class="campo mt-3">' +
-                  '<label for="roleta-email" style="color:rgba(244,237,227,.7)">Seu e-mail</label>' +
+                  '<label for="roleta-email">Seu e-mail</label>' +
                   '<input class="entrada roleta-entrada" id="roleta-email" type="email" ' +
                     'placeholder="voce@email.com" autocomplete="email">' +
                   '<span class="erro-campo" data-roleta-erro></span>' +
                 '</div>'
               : '') +
-            '<button class="btn btn-dourado btn-bloco btn-g mt-2" data-girar>Girar a roleta</button>' +
+            '<button class="btn btn-principal btn-bloco btn-g mt-2" data-girar>Girar a roleta</button>' +
             '<button class="roleta-dispensar" data-roleta-fechar>Agora não, obrigada</button>' +
             (cfg.pedirEmail
               ? '<p class="roleta-aviso">Usamos seu e-mail só para enviar novidades da Duo. ' +
@@ -153,9 +154,9 @@ const Roleta = {
           '</div>' +
 
           '<div class="oculto" data-roleta-passo="resultado">' +
-            '<span class="marca clara"><span class="marca-duo">DUO</span><span class="marca-jeans">JEANS</span></span>' +
-            '<p class="antetitulo escura mt-3">Você ganhou</p>' +
-            '<h2 class="titulo t-lg" style="color:var(--creme)" data-premio-rotulo></h2>' +
+            '<span class="marca"><span class="marca-duo">DUO</span><span class="marca-jeans">JEANS</span></span>' +
+            '<p class="antetitulo mt-3">Você ganhou</p>' +
+            '<h2 class="titulo t-lg" data-premio-rotulo></h2>' +
             '<div class="filete"></div>' +
             '<p class="roleta-texto" data-premio-desc></p>' +
             '<div class="roleta-cupom">' +
@@ -163,7 +164,7 @@ const Roleta = {
               '<button data-copiar-cupom>Copiar</button>' +
             '</div>' +
             '<p class="roleta-validade" data-premio-validade></p>' +
-            '<a href="produtos.html" class="btn btn-dourado btn-bloco btn-g mt-3">Usar agora</a>' +
+            '<a href="produtos.html" class="btn btn-principal btn-bloco btn-g mt-3">Usar agora</a>' +
             '<button class="roleta-dispensar" data-roleta-fechar>Continuar navegando</button>' +
           '</div>' +
         '</div>' +
@@ -237,7 +238,7 @@ const Roleta = {
     const fatia = 360 / premios.length;
     const centro = i * fatia + fatia / 2;
     const folga = (Math.random() - 0.5) * fatia * 0.6;   // não para sempre no meio exato
-    const voltas = 6;
+    const voltas = 7;
     const anguloFinal = voltas * 360 - centro + folga;
 
     const disco = caixa.querySelector('[data-disco]');
@@ -255,7 +256,7 @@ const Roleta = {
       Roleta.girando = false;
       caixa.classList.remove('rodando');
       Roleta.mostrarResultado(caixa, premio);
-    }, 4900);
+    }, 5150);
   },
 
   /* ---------------------------------------------------------
