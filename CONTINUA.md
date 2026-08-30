@@ -5,36 +5,59 @@
 
 ---
 
-## ▶ ONDE PARAMOS — 30/08/2026
+## ▶ ONDE PARAMOS — 30/08/2026 (madrugada)
 
-Tudo commitado e publicado. Último commit: `715a6cb`.
-Nada pela metade, nada quebrado. O site no ar segue funcionando normalmente.
+### A LOJA ESTÁ NO AR EM https://duojeans.com.br
 
-**Feito nesta sessão:**
-1. Preview de compartilhamento (WhatsApp/Instagram) — capa própria + meta tags
-2. Painel da loja em `/admin` — a cliente edita sem abrir arquivo
-3. Migração para o Netlify preparada e testada
+Migração para o Netlify **concluída**. Domínio próprio funcionando com HTTPS.
 
-**O próximo passo depende do cliente, não de código:**
-
-| Passo | Quem |
+| | |
 |---|---|
-| Registrar domínio no registro.br | cliente |
-| Criar conta Netlify e importar o repositório | cliente |
-| Travar limite de gastos no Netlify | cliente |
-| Ligar OAuth do GitHub (faz o painel autenticar) | cliente |
-| Token do Mercado Pago na variável de ambiente | cliente |
-| Rodar `trocar-dominio.py` e conferir tudo no ar | eu |
+| Site | https://duojeans.com.br (e duojeans.netlify.app) |
+| Netlify | time **Emvix**, projeto **duojeans** |
+| Project ID | `c2af1b1f-03bd-40f2-ba6f-943b9aa35395` |
+| Conta | Edson Oliveira — emvixcomercio@gmail.com |
+| Domínio | registro.br, DNS próprio deles (`a.auto.dns.br`) |
+| DNS | A `duojeans.com.br` → `75.2.60.5` · CNAME `www` → `duojeans.netlify.app` |
 
-Guia completo e na ordem certa: **seção 2 do `LEIA-ME.md`**.
+**Verificado no ar:** 40 peças, página de produto (R$ 269,90 com R$ 319,90 riscado),
+checkout monta, função de pagamento responde, os 7 cabeçalhos de segurança ativos
+(clickjacking testado e bloqueando de verdade), cache dos dados revalidando,
+`og:url` e capa corretos nas 8 páginas públicas, 4 páginas privadas sem preview
+e com noindex, `www` redirecionando, HTTPS válido, nenhuma imagem quebrada.
 
-> Não precisa esperar o domínio para criar o site no Netlify. Fazendo 2.1 a 2.4, a
-> loja já funciona de verdade no endereço `.netlify.app` — com pagamento e painel —
-> e o domínio entra depois sem retrabalho.
+### FALTAM DUAS COISAS
 
-**Duas coisas hoje só funcionam depois do Netlify:**
-- O painel `/admin` abre, mas o login falha (precisa do OAuth)
-- Cartão e boleto (a função de pagamento não roda no GitHub Pages)
+**1. Login do painel `/admin`** — a tela abre, o login não funciona.
+Precisa de um provedor OAuth do GitHub. **Não dá para fazer pela API** (conferi:
+189 métodos e 19 serviços, não está em nenhum) — só pela interface do Netlify, em
+`app.netlify.com/projects/duojeans/configuration/oauth` (rolar até o rodapé).
+Se não houver a seção lá, o caminho é criar um OAuth App em
+github.com/settings/developers com callback `https://api.netlify.com/auth/done`
+e colar Client ID + Secret no Netlify.
+
+**2. Cartão e boleto** — falta `MERCADOPAGO_ACCESS_TOKEN` nas variáveis de ambiente.
+A função responde corretamente *"Gateway não configurado"*. Esse eu **consigo**
+configurar pela CLI (`netlify env:set`) assim que o cliente passar o token.
+Combinado: começar com o token de **teste** (`TEST-`), validar a compra inteira, e
+o cliente coloca o de produção depois — token de produção não deve passar pelo chat.
+
+### AINDA PENDENTE (do cliente, de antes)
+- Dados reais no `config.js`: CNPJ, endereço, e-mail, WhatsApp, Instagram
+- Revisar preços peça por peça e marcar esgotados
+- Validar o agrupamento das fotos em `conferencia.html`
+
+### PEQUENAS PENDÊNCIAS TÉCNICAS
+- **Desligar o GitHub Pages** (Settings → Pages → Source: None). Continua servindo
+  a mesma loja num segundo endereço, o que divide reputação no Google.
+- **Limpar o cache do preview** em developers.facebook.com/tools/debug/ — o link
+  já foi compartilhado com o endereço antigo.
+
+### ACESSO
+A CLI do Netlify está autenticada nesta máquina e a pasta está linkada ao projeto
+(`netlify status` confirma). Dá para gerenciar site, domínio, variáveis e deploys
+por linha de comando — foi assim que destravei o 401 (`sso_login`), renomeei o site
+e cadastrei o domínio.
 
 ---
 
