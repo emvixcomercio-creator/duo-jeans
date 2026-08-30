@@ -10,6 +10,12 @@ backend:
   repo: emvixcomercio-creator/duo-jeans
   branch: master
 
+  # O login passa pelo NOSSO servidor, não pelo do Netlify.
+  # As duas funções estão em netlify/functions/oauth-*.js
+  # e o segredo do GitHub fica só em variável de ambiente.
+  base_url: https://duojeans.com.br
+  auth_endpoint: oauth/auth
+
 # Salva direto no site publicado, sem fila de aprovação.
 publish_mode: simple
 

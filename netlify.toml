@@ -66,6 +66,18 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# ------------------------------------------------------------
+#  LOGIN DO PAINEL (/oauth)
+#  A janela de login precisa conversar com a página que a abriu.
+#  Com COOP "same-origin" essa conversa é cortada.
+# ------------------------------------------------------------
+[[headers]]
+  for = "/oauth/*"
+  [headers.values]
+    Cross-Origin-Opener-Policy = "unsafe-none"
+    Cache-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow"
+
 # Nada de cache nas páginas de compra
 [[headers]]
   for = "/checkout.html"
@@ -110,3 +122,18 @@
 # você ligar no site (opção "Force HTTPS", em Domain management).
 # Aqui havia uma regra fixa para duojeans.com.br, um domínio que ainda
 # não existe: não fazia nada e sairia errada ao trocar de endereço.
+
+# ------------------------------------------------------------
+#  ROTAS DO LOGIN DO PAINEL
+#  Endereços curtos para as duas funções de autenticação.
+#  O /oauth/callback é o que fica cadastrado no OAuth App do GitHub.
+# ------------------------------------------------------------
+[[redirects]]
+  from = "/oauth/auth"
+  to = "/.netlify/functions/oauth-auth"
+  status = 200
+
+[[redirects]]
+  from = "/oauth/callback"
+  to = "/.netlify/functions/oauth-callback"
+  status = 200
