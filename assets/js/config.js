@@ -83,78 +83,15 @@ const CONFIG = {
     prefixoNumero: 'DUO'
   },
 
-  /* ---------- ENTREGA ---------- */
-  frete: {
-    gratisAcima: 399,          // frete grátis a partir deste valor (0 = desligado)
-    prazoTexto: '3 a 8 dias úteis após a confirmação do pagamento',
-
-    // Tabela por região (definida pelo 1º dígito do CEP).
-    // Ajuste com os valores que você realmente paga nos Correios.
-    tabela: [
-      { nome: 'Sudeste',      digitos: ['0','1','2','3'], valor: 24.90, prazo: '3 a 5 dias úteis' },
-      { nome: 'Sul',          digitos: ['8','9'],         valor: 32.90, prazo: '4 a 7 dias úteis' },
-      { nome: 'Centro-Oeste', digitos: ['7'],             valor: 36.90, prazo: '5 a 8 dias úteis' },
-      { nome: 'Nordeste',     digitos: ['4','5','6'],     valor: 39.90, prazo: '6 a 10 dias úteis' }
-    ],
-
-    retirada: {
-      ativo: true,
-      texto: 'Retirada em mãos',
-      detalhe: 'Combinamos o ponto de encontro depois da confirmação do pagamento.'
-    }
-  },
-
-  /* ---------- CUPONS DE DESCONTO ---------- */
-  cupons: {
-    'DUO5':      { tipo: 'percentual', valor: 0.05, descricao: '5% de desconto' },
-    'DUO10':     { tipo: 'percentual', valor: 0.10, descricao: '10% de desconto' },
-    'PRIMEIRA':  { tipo: 'percentual', valor: 0.15, descricao: '15% na primeira compra' },
-    'DUO20':     { tipo: 'percentual', valor: 0.20, descricao: '20% de desconto' },
-    'FRETEDUO':  { tipo: 'frete',      valor: 1,    descricao: 'Frete grátis' }
-
-    /* Quando você tiver brindes para dar, basta criar o cupom aqui e
-       incluir na roleta. O brinde não abate valor: aparece no resumo
-       do pedido como cortesia, para você separar e mandar junto.
-       Exemplo:
-       , 'ECOBAGDUO': { tipo: 'brinde', valor: 0, descricao: 'Ecobag da Duo de cortesia' }
-    */
-  },
-
   /* ============================================================
-     ROLETA DE PRÊMIOS
+     FRETE, CUPONS E ROLETA — agora em dados/loja.json
      ------------------------------------------------------------
-     Aparece uma vez por visitante, alguns segundos depois que ela
-     entra no site. Nunca aparece durante o checkout.
+     Esses três blocos saíram daqui. Quem edita é o painel em
+     /admin, que grava em  dados/loja.json.
 
-     IMPORTANTE: o sorteio é de verdade. O peso define a chance de
-     cada fatia sair — peso maior, sai mais vezes. Todas as fatias
-     dão um prêmio real, nenhuma é "não ganhou".
-
-     Para desligar a roleta: ativo: false
+     Se precisar mexer na mão, edite aquele arquivo — não volte
+     a escrever aqui, ou o painel sobrescreve na próxima vez.
      ============================================================ */
-  roleta: {
-    ativo: true,
-    segundosParaAbrir: 6,     // tempo antes de aparecer
-    pedirEmail: true,         // pedir o e-mail antes de girar
-    validadeHoras: 24,        // por quanto tempo o prêmio vale
-
-    // As 8 fatias da roleta, na ordem em que aparecem.
-    // 'cupom' precisa existir na lista de cupons acima.
-    premios: [
-      { rotulo: '5% OFF',       cupom: 'DUO5',     peso: 17 },
-      { rotulo: 'FRETE GRÁTIS', cupom: 'FRETEDUO', peso: 11 },
-      { rotulo: '10% OFF',      cupom: 'DUO10',    peso: 13 },
-      { rotulo: '5% OFF',       cupom: 'DUO5',     peso: 17 },
-      { rotulo: '15% OFF',      cupom: 'PRIMEIRA', peso: 6  },
-      { rotulo: 'FRETE GRÁTIS', cupom: 'FRETEDUO', peso: 11 },
-      { rotulo: '10% OFF',      cupom: 'DUO10',    peso: 13 },
-      { rotulo: '5% OFF',       cupom: 'DUO5',     peso: 17 },
-      { rotulo: '20% OFF',      cupom: 'DUO20',    peso: 2  },
-      { rotulo: 'FRETE GRÁTIS', cupom: 'FRETEDUO', peso: 11 },
-      { rotulo: '10% OFF',      cupom: 'DUO10',    peso: 13 },
-      { rotulo: '15% OFF',      cupom: 'PRIMEIRA', peso: 6  }
-    ]
-  },
 
   /* ---------- TEXTOS ---------- */
   avisoTopo: 'FRETE GRÁTIS ACIMA DE R$ 399 · ATÉ 3X SEM JUROS · 5% OFF NO PIX',

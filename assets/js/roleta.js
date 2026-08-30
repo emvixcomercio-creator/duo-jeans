@@ -337,4 +337,6 @@ const Roleta = {
   }
 };
 
-document.addEventListener('DOMContentLoaded', () => setTimeout(Roleta.iniciar, 300));
+document.addEventListener('DOMContentLoaded', () => {
+  Dados.pronto().then(() => setTimeout(Roleta.iniciar, 300));
+});

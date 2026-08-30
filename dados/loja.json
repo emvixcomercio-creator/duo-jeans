@@ -1,0 +1,151 @@
+{
+  "frete": {
+    "gratisAcima": 399,
+    "prazoTexto": "3 a 8 dias úteis após a confirmação do pagamento",
+    "tabela": [
+      {
+        "nome": "Sudeste",
+        "digitos": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "valor": 24.9,
+        "prazo": "3 a 5 dias úteis"
+      },
+      {
+        "nome": "Sul",
+        "digitos": [
+          "8",
+          "9"
+        ],
+        "valor": 32.9,
+        "prazo": "4 a 7 dias úteis"
+      },
+      {
+        "nome": "Centro-Oeste",
+        "digitos": [
+          "7"
+        ],
+        "valor": 36.9,
+        "prazo": "5 a 8 dias úteis"
+      },
+      {
+        "nome": "Nordeste",
+        "digitos": [
+          "4",
+          "5",
+          "6"
+        ],
+        "valor": 39.9,
+        "prazo": "6 a 10 dias úteis"
+      }
+    ],
+    "retirada": {
+      "ativo": true,
+      "texto": "Retirada em mãos",
+      "detalhe": "Combinamos o ponto de encontro depois da confirmação do pagamento."
+    }
+  },
+  "cupons": [
+    {
+      "codigo": "DUO5",
+      "tipo": "percentual",
+      "valor": 0.05,
+      "descricao": "5% de desconto"
+    },
+    {
+      "codigo": "DUO10",
+      "tipo": "percentual",
+      "valor": 0.1,
+      "descricao": "10% de desconto"
+    },
+    {
+      "codigo": "PRIMEIRA",
+      "tipo": "percentual",
+      "valor": 0.15,
+      "descricao": "15% na primeira compra"
+    },
+    {
+      "codigo": "DUO20",
+      "tipo": "percentual",
+      "valor": 0.2,
+      "descricao": "20% de desconto"
+    },
+    {
+      "codigo": "FRETEDUO",
+      "tipo": "frete",
+      "valor": 1,
+      "descricao": "Frete grátis"
+    }
+  ],
+  "roleta": {
+    "ativo": true,
+    "segundosParaAbrir": 6,
+    "pedirEmail": true,
+    "validadeHoras": 24,
+    "premios": [
+      {
+        "rotulo": "5% OFF",
+        "cupom": "DUO5",
+        "peso": 17
+      },
+      {
+        "rotulo": "FRETE GRÁTIS",
+        "cupom": "FRETEDUO",
+        "peso": 11
+      },
+      {
+        "rotulo": "10% OFF",
+        "cupom": "DUO10",
+        "peso": 13
+      },
+      {
+        "rotulo": "5% OFF",
+        "cupom": "DUO5",
+        "peso": 17
+      },
+      {
+        "rotulo": "15% OFF",
+        "cupom": "PRIMEIRA",
+        "peso": 6
+      },
+      {
+        "rotulo": "FRETE GRÁTIS",
+        "cupom": "FRETEDUO",
+        "peso": 11
+      },
+      {
+        "rotulo": "10% OFF",
+        "cupom": "DUO10",
+        "peso": 13
+      },
+      {
+        "rotulo": "5% OFF",
+        "cupom": "DUO5",
+        "peso": 17
+      },
+      {
+        "rotulo": "20% OFF",
+        "cupom": "DUO20",
+        "peso": 2
+      },
+      {
+        "rotulo": "FRETE GRÁTIS",
+        "cupom": "FRETEDUO",
+        "peso": 11
+      },
+      {
+        "rotulo": "10% OFF",
+        "cupom": "DUO10",
+        "peso": 13
+      },
+      {
+        "rotulo": "15% OFF",
+        "cupom": "PRIMEIRA",
+        "peso": 6
+      }
+    ]
+  }
+}

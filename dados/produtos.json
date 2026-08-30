@@ -1,0 +1,1196 @@
+{
+  "produtos": [
+    {
+      "id": "cargo-milena",
+      "nome": "Calça Cargo Milena",
+      "categoria": "calcas",
+      "modelagem": "Cargo wide leg",
+      "lavagem": "Azul médio",
+      "preco": 269.9,
+      "precoDe": 319.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/cargo-milena-1.jpg",
+        "assets/img/produtos/cargo-milena-2.jpg",
+        "assets/img/produtos/cargo-milena-3.jpg"
+      ],
+      "novidade": true,
+      "destaque": true,
+      "badge": "Mais vendida",
+      "descricao": "Cargo de cintura alta com bolsos utilitários e fitas que caem soltas na lateral. Perna ampla do quadril à barra: é a peça que dá atitude ao look mais simples.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolsos cargo com fita",
+        "Modelagem wide leg",
+        "Barra a fio"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-antonella",
+      "nome": "Calça Wide Leg Antonella",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Azul claro",
+      "preco": 249.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-antonella-1.jpg",
+        "assets/img/produtos/wide-leg-antonella-2.jpg",
+        "assets/img/produtos/wide-leg-antonella-3.jpg",
+        "assets/img/produtos/wide-leg-antonella-4.jpg",
+        "assets/img/produtos/wide-leg-antonella-5.jpg"
+      ],
+      "novidade": true,
+      "destaque": true,
+      "descricao": "Recorte lateral curvo que alonga a perna inteira e uma lavagem clara que combina com tudo. Ampla de verdade, sem perder o caimento na cintura.",
+      "detalhes": [
+        "Cintura alta",
+        "Recorte lateral curvo",
+        "Perna super ampla",
+        "Cinco bolsos"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-verde-olivia",
+      "nome": "Calça Wide Leg Olívia",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Verde militar",
+      "preco": 259.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-verde-olivia-1.jpg",
+        "assets/img/produtos/wide-leg-verde-olivia-2.jpg"
+      ],
+      "novidade": true,
+      "destaque": true,
+      "badge": "Novidade",
+      "descricao": "O verde militar que sai do óbvio sem abrir mão do básico. Modelagem ampla, cintura alta e tingimento estonado que dá aquele ar de peça vivida.",
+      "detalhes": [
+        "Cintura alta",
+        "Lavagem estonada",
+        "Modelagem wide leg",
+        "Bolso faca"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "cargo-balloon-rafaela",
+      "nome": "Calça Cargo Balloon Rafaela",
+      "categoria": "calcas",
+      "modelagem": "Balloon",
+      "lavagem": "Azul médio",
+      "preco": 279.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/cargo-balloon-rafaela-1.jpg",
+        "assets/img/produtos/cargo-balloon-rafaela-2.jpg",
+        "assets/img/produtos/cargo-balloon-rafaela-3.jpg"
+      ],
+      "novidade": true,
+      "badge": "Novidade",
+      "descricao": "Balloon de barra bufante e bolsos cargo com aba. Volume na medida certa: marca a cintura e solta no quadril, com comprimento que valoriza o salto.",
+      "detalhes": [
+        "Cintura alta",
+        "Barra bufante",
+        "Bolsos cargo com aba",
+        "Comprimento cropped"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "cargo-helena",
+      "nome": "Calça Cargo Helena",
+      "categoria": "calcas",
+      "modelagem": "Cargo wide leg",
+      "lavagem": "Azul claro",
+      "preco": 259.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/cargo-helena-1.jpg",
+        "assets/img/produtos/cargo-helena-2.jpg"
+      ],
+      "destaque": true,
+      "descricao": "Cargo clarinha de bolsos chapados, com recorte no joelho que estrutura a perna. Confortável do jeito que uma calça de todo dia precisa ser.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolsos chapados",
+        "Recorte no joelho",
+        "Modelagem ampla"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "cargo-valentina",
+      "nome": "Calça Cargo Valentina",
+      "categoria": "calcas",
+      "modelagem": "Cargo wide leg",
+      "lavagem": "Azul claro",
+      "preco": 269.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/cargo-valentina-1.jpg",
+        "assets/img/produtos/cargo-valentina-2.jpg"
+      ],
+      "novidade": true,
+      "descricao": "A cargo mais utilitária da seleção: bolsos grandes na coxa e na canela, perna larga e cintura alta. Streetwear com acabamento de alfaiataria.",
+      "detalhes": [
+        "Cintura alta",
+        "Seis bolsos",
+        "Perna larga",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-carpinteiro-nina",
+      "nome": "Calça Wide Leg Carpinteiro Nina",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Azul médio",
+      "preco": 239.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-carpinteiro-nina-1.jpg",
+        "assets/img/produtos/wide-leg-carpinteiro-nina-2.jpg"
+      ],
+      "destaque": true,
+      "descricao": "Inspiração carpinteiro com passador lateral e recortes diagonais. Azul médio uniforme, do tipo que fica bonito por anos.",
+      "detalhes": [
+        "Cintura alta",
+        "Detalhe carpinteiro",
+        "Recortes diagonais",
+        "Perna ampla"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-bicolor-manu",
+      "nome": "Calça Wide Leg Bicolor Manu",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Bicolor",
+      "preco": 289.9,
+      "precoDe": 329.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-bicolor-manu-1.jpg",
+        "assets/img/produtos/wide-leg-bicolor-manu-2.jpg",
+        "assets/img/produtos/wide-leg-bicolor-manu-3.jpg"
+      ],
+      "novidade": true,
+      "destaque": true,
+      "badge": "Novidade",
+      "descricao": "Dois tons de lavagem em recortes curvos que desenham a perna. A peça de statement da coleção — combina com o básico mais simples que você tiver.",
+      "detalhes": [
+        "Cintura alta",
+        "Recortes em dois tons",
+        "Modelagem wide leg",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "flare-amora",
+      "nome": "Calça Flare Amora",
+      "categoria": "calcas",
+      "modelagem": "Flare",
+      "lavagem": "Azul vintage",
+      "preco": 249.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/flare-amora-1.jpg",
+        "assets/img/produtos/flare-amora-2.jpg"
+      ],
+      "novidade": true,
+      "descricao": "Boca de sino de verdade, com fenda na barra e lavagem vintage marcada. Justa no quadril, aberta a partir do joelho: alonga sem esforço.",
+      "detalhes": [
+        "Cintura alta",
+        "Fenda na barra",
+        "Lavagem vintage",
+        "Modelagem flare"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-marmore-chiara",
+      "nome": "Calça Wide Leg Chiara",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Azul claro estonado",
+      "preco": 229.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-marmore-chiara-1.jpg"
+      ],
+      "descricao": "Lavagem estonada com sombreado natural, do tipo que nenhuma peça repete igual. Modelagem ampla e cintura alta confortável.",
+      "detalhes": [
+        "Cintura alta",
+        "Lavagem estonada",
+        "Perna ampla",
+        "Cinco bolsos"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-bruna",
+      "nome": "Calça Wide Leg Bruna",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Azul médio",
+      "preco": 239.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-bruna-1.jpg",
+        "assets/img/produtos/wide-leg-bruna-2.jpg"
+      ],
+      "descricao": "O azul médio clássico em modelagem larga e cintura alta. A base que resolve o guarda-roupa inteiro, do trabalho ao fim de semana.",
+      "detalhes": [
+        "Cintura alta",
+        "Modelagem wide leg",
+        "Cinco bolsos",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-caramelo-alice",
+      "nome": "Calça Wide Leg Alice",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Caramelo",
+      "preco": 239.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-caramelo-alice-1.jpg"
+      ],
+      "novidade": true,
+      "badge": "Novidade",
+      "descricao": "Sarja caramelo em modelagem ampla, para quando o azul não é a resposta. Cai muito bem com tons de branco, off-white e chocolate.",
+      "detalhes": [
+        "Cintura alta",
+        "Sarja de algodão",
+        "Modelagem ampla",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-isabela",
+      "nome": "Calça Wide Leg Isabela",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Azul claro",
+      "preco": 229.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-isabela-1.jpg",
+        "assets/img/produtos/wide-leg-isabela-2.jpg"
+      ],
+      "descricao": "Larga, leve e de cintura alta — a wide leg mais fácil de usar da seleção. Bolsos traseiros posicionados para valorizar o quadril.",
+      "detalhes": [
+        "Cintura alta",
+        "Modelagem wide leg",
+        "Bolsos traseiros",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-ampla-julia",
+      "nome": "Calça Wide Leg Júlia",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Azul claro",
+      "preco": 249.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-ampla-julia-1.jpg"
+      ],
+      "descricao": "Perna extra ampla com caimento fluido que parece saia quando você anda. Cintura alta bem marcada para equilibrar o volume.",
+      "detalhes": [
+        "Cintura alta",
+        "Perna extra ampla",
+        "Caimento fluido",
+        "Barra a fio"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "cargo-larissa",
+      "nome": "Calça Cargo Larissa",
+      "categoria": "calcas",
+      "modelagem": "Cargo",
+      "lavagem": "Azul médio",
+      "preco": 259.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/cargo-larissa-1.jpg"
+      ],
+      "descricao": "Cargo de modelagem reta e bolsos laterais estruturados. Mais discreta que as wide, para quem gosta do estilo utilitário sem exagero.",
+      "detalhes": [
+        "Cintura alta",
+        "Modelagem reta",
+        "Bolsos laterais",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-pregas-sofia",
+      "nome": "Calça Wide Leg Sofia",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Azul claro",
+      "preco": 239.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-pregas-sofia-1.jpg",
+        "assets/img/produtos/wide-leg-pregas-sofia-2.jpg"
+      ],
+      "descricao": "Cós duplo abotoado e pregas que soltam a perna a partir do quadril. Um toque de alfaiataria em cima do jeans de sempre.",
+      "detalhes": [
+        "Cós duplo abotoado",
+        "Pregas frontais",
+        "Perna ampla",
+        "Cintura alta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-clara-beatriz",
+      "nome": "Calça Wide Leg Beatriz",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Azul claro",
+      "preco": 229.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-clara-beatriz-1.jpg",
+        "assets/img/produtos/wide-leg-clara-beatriz-2.jpg"
+      ],
+      "descricao": "Lavagem clarinha com marcações suaves na coxa e perna reta e larga. Aquela calça que você pega sem pensar e acerta sempre.",
+      "detalhes": [
+        "Cintura alta",
+        "Marcações naturais",
+        "Perna larga",
+        "Cinco bolsos"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-musgo-clara",
+      "nome": "Calça Wide Leg Clara",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Verde musgo",
+      "preco": 249.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-musgo-clara-1.jpg"
+      ],
+      "novidade": true,
+      "descricao": "Verde musgo estonado em modelagem ampla e cintura alta. A alternativa elegante ao jeans azul, sem perder o jeitão de denim.",
+      "detalhes": [
+        "Cintura alta",
+        "Tingimento estonado",
+        "Modelagem ampla",
+        "Cinco bolsos"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "wide-leg-cinza-vitoria",
+      "nome": "Calça Wide Leg Vitória",
+      "categoria": "calcas",
+      "modelagem": "Wide leg",
+      "lavagem": "Cinza",
+      "preco": 239.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/wide-leg-cinza-vitoria-1.jpg"
+      ],
+      "descricao": "Cinza esverdeado em modelagem baggy, com caimento pesado que estrutura a silhueta. Neutra o suficiente para virar coringa.",
+      "detalhes": [
+        "Cintura alta",
+        "Modelagem baggy",
+        "Caimento pesado",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "cargo-antonia",
+      "nome": "Calça Cargo Antônia",
+      "categoria": "calcas",
+      "modelagem": "Cargo",
+      "lavagem": "Azul médio",
+      "preco": 259.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/cargo-antonia-1.jpg"
+      ],
+      "descricao": "Cargo de perna reta com bolsos sobrepostos ao longo da coxa. Azul médio uniforme, com estrutura firme que segura a modelagem o dia inteiro.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolsos sobrepostos",
+        "Perna reta",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "bermuda-cargo-yasmin",
+      "nome": "Bermuda Cargo Yasmin",
+      "categoria": "shorts",
+      "modelagem": "Bermuda",
+      "lavagem": "Azul médio",
+      "preco": 189.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/bermuda-cargo-yasmin-1.jpg",
+        "assets/img/produtos/bermuda-cargo-yasmin-2.jpg"
+      ],
+      "novidade": true,
+      "destaque": true,
+      "badge": "Novidade",
+      "descricao": "Bermuda cargo comprida, de cintura alta e bolsos com aba. O meio-termo perfeito entre o short e a calça para os dias quentes.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolsos cargo",
+        "Comprimento até o joelho",
+        "Barra dobrada"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "bermuda-grafite-manuela",
+      "nome": "Bermuda Grafite Manuela",
+      "categoria": "shorts",
+      "modelagem": "Bermuda",
+      "lavagem": "Grafite",
+      "preco": 179.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/bermuda-grafite-manuela-1.jpg"
+      ],
+      "descricao": "Bermuda curta em lavagem grafite com bolso utilitário lateral. Estrutura firme, daquelas que não amassam ao sentar.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolso lateral",
+        "Lavagem grafite",
+        "Comprimento curto"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "bermuda-clara-marina",
+      "nome": "Bermuda Clara Marina",
+      "categoria": "shorts",
+      "modelagem": "Bermuda",
+      "lavagem": "Azul claro",
+      "preco": 179.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/bermuda-clara-marina-1.jpg"
+      ],
+      "descricao": "Bermuda alfaiatada em jeans claro, com caimento solto e barra reta. Elegante o bastante para usar com salto.",
+      "detalhes": [
+        "Cintura alta",
+        "Caimento solto",
+        "Barra reta",
+        "Bolso faca"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-preto-luiza",
+      "nome": "Short Luiza",
+      "categoria": "shorts",
+      "modelagem": "Reto",
+      "lavagem": "Preto",
+      "preco": 149.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-preto-luiza-1.jpg",
+        "assets/img/produtos/short-preto-luiza-2.jpg"
+      ],
+      "descricao": "Short preto de cintura alta e corte reto. A base que fecha qualquer look de verão sem pedir esforço.",
+      "detalhes": [
+        "Cintura alta",
+        "Corte reto",
+        "Cinco bolsos",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-alto-luna",
+      "nome": "Short Cintura Alta Luna",
+      "categoria": "shorts",
+      "modelagem": "Reto",
+      "lavagem": "Azul médio",
+      "preco": 159.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-alto-luna-1.jpg",
+        "assets/img/produtos/short-alto-luna-2.jpg",
+        "assets/img/produtos/short-alto-luna-3.jpg"
+      ],
+      "destaque": true,
+      "descricao": "Cintura alta, corte reto e comprimento na medida — cobre o suficiente para você esquecer que está de short e só aproveitar o dia.",
+      "detalhes": [
+        "Cintura alta",
+        "Barra dobrada",
+        "Cinco bolsos",
+        "Modelagem reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-claro-fernanda",
+      "nome": "Short Fernanda",
+      "categoria": "shorts",
+      "modelagem": "Solto",
+      "lavagem": "Azul claro",
+      "preco": 159.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-claro-fernanda-1.jpg",
+        "assets/img/produtos/short-claro-fernanda-2.jpg",
+        "assets/img/produtos/short-claro-fernanda-3.jpg"
+      ],
+      "novidade": true,
+      "descricao": "Lavagem clara e modelagem levemente solta, com bolsos frontais embutidos. Leve para os dias mais quentes.",
+      "detalhes": [
+        "Cintura alta",
+        "Modelagem solta",
+        "Bolsos embutidos",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-carol",
+      "nome": "Short Carol",
+      "categoria": "shorts",
+      "modelagem": "Reto",
+      "lavagem": "Azul médio",
+      "preco": 159.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-carol-1.jpg"
+      ],
+      "descricao": "Short de cintura alta com pregas suaves na frente, que soltam o quadril e deixam o caimento mais confortável.",
+      "detalhes": [
+        "Cintura alta",
+        "Pregas frontais",
+        "Cinco bolsos",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-saint-gabriela",
+      "nome": "Short Gabriela",
+      "categoria": "shorts",
+      "modelagem": "Reto",
+      "lavagem": "Azul claro",
+      "preco": 169.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-saint-gabriela-1.jpg",
+        "assets/img/produtos/short-saint-gabriela-2.jpg",
+        "assets/img/produtos/short-saint-gabriela-3.jpg"
+      ],
+      "novidade": true,
+      "descricao": "Cintura alta bem marcada e barra levemente desfiada. Foi feito para usar com camiseta larga e tênis, mas também aguenta um salto.",
+      "detalhes": [
+        "Cintura alta",
+        "Barra desfiada",
+        "Modelagem reta",
+        "Cinco bolsos"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-escuro-camila",
+      "nome": "Short Camila",
+      "categoria": "shorts",
+      "modelagem": "Reto",
+      "lavagem": "Azul escuro",
+      "preco": 159.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-escuro-camila-1.jpg",
+        "assets/img/produtos/short-escuro-camila-2.jpg"
+      ],
+      "descricao": "Azul escuro de cintura alta, o mais discreto da seleção. Alonga a perna e combina com absolutamente qualquer parte de cima.",
+      "detalhes": [
+        "Cintura alta",
+        "Lavagem escura",
+        "Corte reto",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-bolso-amanda",
+      "nome": "Short Amanda",
+      "categoria": "shorts",
+      "modelagem": "Solto",
+      "lavagem": "Azul médio",
+      "preco": 169.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-bolso-amanda-1.jpg",
+        "assets/img/produtos/short-bolso-amanda-2.jpg",
+        "assets/img/produtos/short-bolso-amanda-3.jpg"
+      ],
+      "descricao": "Modelagem solta com bolsos chapados na frente e barra dobrada. Confortável para o dia inteiro fora de casa.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolsos chapados",
+        "Barra dobrada",
+        "Modelagem solta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-mariana",
+      "nome": "Short Mariana",
+      "categoria": "shorts",
+      "modelagem": "Reto",
+      "lavagem": "Azul médio",
+      "preco": 159.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-mariana-1.jpg"
+      ],
+      "descricao": "Corte reto e cintura alta em lavagem média. O short mais atemporal da seleção, de comprimento clássico.",
+      "detalhes": [
+        "Cintura alta",
+        "Corte reto",
+        "Comprimento clássico",
+        "Cinco bolsos"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-cargo-nicole",
+      "nome": "Short Cargo Nicole",
+      "categoria": "shorts",
+      "modelagem": "Cargo",
+      "lavagem": "Azul médio",
+      "preco": 179.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-cargo-nicole-1.jpg",
+        "assets/img/produtos/short-cargo-nicole-2.jpg"
+      ],
+      "novidade": true,
+      "descricao": "Short cargo de cintura alta com bolsos laterais funcionais. Estilo utilitário no comprimento certo para o verão.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolsos cargo",
+        "Modelagem reta",
+        "Barra reta"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "short-peaches-rebeca",
+      "nome": "Short Rebeca",
+      "categoria": "shorts",
+      "modelagem": "Reto",
+      "lavagem": "Azul claro",
+      "preco": 159.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/short-peaches-rebeca-1.jpg"
+      ],
+      "descricao": "Cintura alta e lavagem clara uniforme, com barra reta. Simples, bem cortado e do tipo que entra na mala de qualquer viagem.",
+      "detalhes": [
+        "Cintura alta",
+        "Lavagem clara",
+        "Barra reta",
+        "Cinco bolsos"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "saia-grafite-elisa",
+      "nome": "Saia Elisa",
+      "categoria": "saias",
+      "modelagem": "Reta curta",
+      "lavagem": "Grafite",
+      "preco": 169.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/saia-grafite-elisa-1.jpg",
+        "assets/img/produtos/saia-grafite-elisa-2.jpg"
+      ],
+      "novidade": true,
+      "descricao": "Saia curta em lavagem grafite, com bolso utilitário e caimento estruturado. Transforma uma regata básica em produção.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolso utilitário",
+        "Comprimento curto",
+        "Forro interno"
+      ],
+      "composicao": "98% algodão · 2% elastano",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "saia-botoes-livia",
+      "nome": "Saia Lívia",
+      "categoria": "saias",
+      "modelagem": "Reta curta",
+      "lavagem": "Azul claro",
+      "preco": 169.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/saia-botoes-livia-1.jpg"
+      ],
+      "novidade": true,
+      "descricao": "Saia de botões frontais encapados e cintura alta. Um clássico do jeans que volta todo verão — e nunca sai errado.",
+      "detalhes": [
+        "Cintura alta",
+        "Botões frontais",
+        "Comprimento curto",
+        "Forro interno"
+      ],
+      "composicao": "98% algodão · 2% elastano",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "saia-clara-bianca",
+      "nome": "Saia Bianca",
+      "categoria": "saias",
+      "modelagem": "Reta curta",
+      "lavagem": "Azul claro",
+      "preco": 159.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/saia-clara-bianca-1.jpg"
+      ],
+      "descricao": "Lavagem clara e corte reto, com bolsos frontais. Leve, curta e confortável para os dias de calor de verdade.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolsos frontais",
+        "Corte reto",
+        "Comprimento curto"
+      ],
+      "composicao": "98% algodão · 2% elastano",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "saia-caramelo-heloisa",
+      "nome": "Saia Heloísa",
+      "categoria": "saias",
+      "modelagem": "Reta curta",
+      "lavagem": "Caramelo",
+      "preco": 169.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/saia-caramelo-heloisa-1.jpg",
+        "assets/img/produtos/saia-caramelo-heloisa-2.jpg"
+      ],
+      "novidade": true,
+      "badge": "Novidade",
+      "descricao": "Sarja caramelo com bolsos de aba e cintura alta. A saia que dá um respiro no azul e combina com tudo que é neutro.",
+      "detalhes": [
+        "Cintura alta",
+        "Bolsos com aba",
+        "Sarja de algodão",
+        "Comprimento curto"
+      ],
+      "composicao": "98% algodão · 2% elastano",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "saia-transpassada-duda",
+      "nome": "Saia Duda",
+      "categoria": "saias",
+      "modelagem": "Transpassada",
+      "lavagem": "Azul claro",
+      "preco": 179.9,
+      "tamanhos": [
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/saia-transpassada-duda-1.jpg"
+      ],
+      "novidade": true,
+      "descricao": "Saia-short transpassada com botões e bolso frontal. Tem a liberdade do short com a silhueta da saia — resolve o verão inteiro.",
+      "detalhes": [
+        "Cintura alta",
+        "Modelo saia-short",
+        "Transpasse abotoado",
+        "Bolso frontal"
+      ],
+      "composicao": "98% algodão · 2% elastano",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "camisa-jeans-agatha",
+      "nome": "Camisa Jeans Ágatha",
+      "categoria": "jaquetas",
+      "modelagem": "Camisa",
+      "lavagem": "Azul claro",
+      "preco": 219.9,
+      "tamanhos": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ],
+      "esgotados": [
+        "GG"
+      ],
+      "imagens": [
+        "assets/img/produtos/camisa-jeans-agatha-1.jpg"
+      ],
+      "novidade": true,
+      "destaque": true,
+      "badge": "Novidade",
+      "descricao": "Camisa de jeans leve, para usar fechada ou aberta por cima do look. Ombro levemente caído e caimento solto.",
+      "detalhes": [
+        "Modelagem solta",
+        "Botões frontais",
+        "Ombro caído",
+        "Bolsos no peito"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    },
+    {
+      "id": "macaquinho-jade",
+      "nome": "Macaquinho Jeans Jade",
+      "categoria": "macaquinhos",
+      "modelagem": "Macaquinho",
+      "lavagem": "Azul escuro",
+      "preco": 249.9,
+      "tamanhos": [
+        "P",
+        "M",
+        "G"
+      ],
+      "esgotados": [],
+      "imagens": [
+        "assets/img/produtos/macaquinho-jade-1.jpg",
+        "assets/img/produtos/macaquinho-jade-2.jpg"
+      ],
+      "novidade": true,
+      "badge": "Novidade",
+      "descricao": "Macaquinho de alças largas e bolsos frontais estruturados, em jeans escuro. Uma peça só que já é o look inteiro.",
+      "detalhes": [
+        "Alças largas",
+        "Bolsos frontais",
+        "Jeans escuro",
+        "Fecho traseiro"
+      ],
+      "composicao": "100% algodão",
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+    }
+  ]
+}

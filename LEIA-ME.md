@@ -5,15 +5,29 @@ dourado `#B99653` e creme `#F4EDE3`.
 
 ---
 
-## 1. Antes de tudo: os 3 arquivos que você edita
+## 1. Antes de tudo: o painel
 
-Todo o resto do site funciona sozinho. Você só precisa mexer nestes:
+**O dia a dia da loja se faz pelo painel, sem abrir arquivo nenhum:**
 
-| Arquivo | Para que serve |
-|---|---|
-| `assets/js/config.js` | Dados da loja, pagamento, frete, cupons |
-| `assets/js/produtos.js` | O catálogo: peças, preços, fotos, estoque |
-| `assets/img/produtos/` | As fotos das peças |
+```
+https://seu-site/admin
+```
+
+Lá você muda preço, marca tamanho esgotado, cadastra peça nova com foto e ajusta
+frete, cupons e roleta — tudo em formulário, sem risco de quebrar o site com uma
+vírgula fora do lugar. Passo a passo na **seção 5**.
+
+Se precisar mexer por baixo do pano, os arquivos são estes:
+
+| Arquivo | Para que serve | Quem edita |
+|---|---|---|
+| `dados/produtos.json` | O catálogo: peças, preços, fotos, esgotados | **o painel** |
+| `dados/loja.json` | Frete, cupons e roleta | **o painel** |
+| `assets/img/produtos/` | As fotos das peças | o painel, ao enviar foto |
+| `assets/js/config.js` | Nome, CNPJ, contato e **pagamento** | você, na mão |
+
+> O `config.js` ficou de fora do painel de propósito: é onde mora a configuração do
+> gateway de pagamento. Quem edita a vitrine não precisa — nem deve — encostar nisso.
 
 ---
 
@@ -86,53 +100,81 @@ com o resumo do pedido e o endereço de entrega.
 
 ---
 
-## 5. Mexendo no catálogo
+## 5. Mexendo no catálogo (pelo painel)
 
-### Mudar preço, promoção ou estoque
-Abra `assets/js/produtos.js` e ache a peça:
+Entre em `https://seu-site/admin` e clique em **Entrar com o GitHub**.
 
-```js
-{
-  id: "cargo-milena",
-  nome: "Calça Cargo Milena",
-  preco: 269.90,          // preço de venda
-  precoDe: 319.90,        // preço riscado — apague esta linha se não houver promoção
-  tamanhos: [36, 38, 40, 42, 44],
-  esgotados: [36, 44],    // ficam riscados e não podem ser comprados
-  novidade: true,         // aparece em "Novidades"
-  destaque: true,         // aparece na página inicial
-  badge: "Mais vendida",  // selo na foto
-  ...
-}
-```
+> **Antes de funcionar:** o painel só abre depois que o site estiver no **Netlify**
+> e o login do GitHub estiver ligado lá. Veja a seção 5.4.
 
-### Cadastrar uma peça nova
-1. Salve as fotos em `assets/img/produtos/` na proporção **3x4** (ex.: 1000x1333 px).
-2. Copie um bloco `{ ... }` inteiro e cole no fim da lista.
-3. Troque o `id` (único, sem espaço nem acento), o nome, o preço e o caminho das fotos.
+### 5.1. Mudar preço, promoção ou esgotado
 
-A primeira foto é a da vitrine; a segunda é a que aparece quando a cliente passa o mouse.
+1. **Catálogo** → **Peças da loja**
+2. Ache a peça na lista (aparece como *nome — preço*) e clique na setinha para abrir
+3. Mude o que precisar:
+   - **Preço de venda** — use ponto nos centavos: `269.90`
+   - **Preço antigo, riscado** — só preencha em promoção; vazio = sem promoção
+   - **Tamanhos esgotados** — ficam riscados e não podem ser comprados
+4. **Publicar** → **Publicar agora**
 
-### Tirar uma peça do ar
-Apague o bloco dela, ou marque todos os tamanhos como esgotados.
+A loja atualiza em cerca de um minuto.
+
+### 5.2. Cadastrar uma peça nova
+
+1. **Catálogo** → **Peças da loja** → botão **Adicionar peça** (no fim da lista)
+2. Preencha os campos. Atenção a dois:
+   - **Código (id)** — só letras minúsculas, números e hífen, ex.: `cargo-milena`.
+     Precisa ser único e **não deve mudar depois de publicado**: é ele que forma o
+     link da peça. Se mudar, quem salvou o link antigo cai numa página que não existe.
+   - **Fotos** — envie pelo próprio painel. Use fotos **em pé, na proporção 3x4**
+     (ex.: 1000×1333 px). A primeira é a da vitrine; a segunda aparece quando a
+     cliente passa o mouse.
+3. **Publicar agora**
+
+### 5.3. Tirar uma peça do ar
+
+Abra a peça e clique no **×** do bloco dela, ou marque todos os tamanhos como
+esgotados se for coisa temporária.
+
+### 5.4. Ligar o painel (uma vez só)
+
+O painel guarda as mudanças no repositório do GitHub, então precisa de um login.
+Depois que o site estiver no Netlify:
+
+1. No Netlify, abra o site → **Site configuration** → **Access & security** →
+   **OAuth** → **Install provider** → **GitHub**
+2. A pessoa que vai usar o painel precisa de uma conta no GitHub (grátis) e de
+   acesso ao repositório `emvixcomercio-creator/duo-jeans`:
+   no GitHub, **Settings** → **Collaborators** → **Add people**
+3. Pronto: `https://seu-site/admin` → **Entrar com o GitHub**
+
+### 5.5. Se o painel abrir com os campos vazios
+
+O painel guarda rascunho no navegador. Se um rascunho vazio ficar preso, os campos
+aparecem em branco mesmo com os dados salvos no lugar certo — **não publique assim**,
+ou o rascunho vazio sobrescreve o conteúdo bom.
+
+Para resolver: feche a aba, abra o painel de novo e, se o navegador perguntar
+*"Um backup local foi recuperado"*, responda **não**. Em último caso, abra o painel
+numa janela anônima.
 
 ---
 
 ## 6. Frete e cupons
 
-Em `config.js`:
+No painel: **Frete, cupons e roleta** → **Regras de venda**.
 
-```js
-frete: {
-  gratisAcima: 399,     // frete grátis a partir deste valor
-  tabela: [ ... ]       // valor e prazo por região, pelo 1º dígito do CEP
-}
-```
+**Frete**
+- **Frete grátis a partir de** — use 0 para desligar
+- **Valor por região** — valor e prazo por região, definidos pelo 1º dígito do CEP
 
-O site consulta o **ViaCEP** para preencher o endereço sozinho, e usa a sua tabela
-para calcular o valor. Ajuste os valores com o que você realmente paga nos Correios.
+O site consulta o **ViaCEP** para preencher o endereço sozinho, e usa essa tabela para
+calcular o valor. Ajuste com o que você realmente paga nos Correios.
 
-Cupons ficam logo abaixo, em `cupons`. Já vêm três prontos: `DUO10`, `PRIMEIRA` e `FRETEDUO`.
+**Cupons** — já vêm cinco prontos: `DUO5`, `DUO10`, `PRIMEIRA`, `DUO20` e `FRETEDUO`.
+
+Ao criar um cupom, o campo **Valor** confunde: para desconto em porcentagem use
+**decimal** — `0.10` é 10%, `0.15` é 15%. Para frete grátis use `1`. Para brinde, `0`.
 
 ---
 
@@ -174,13 +216,15 @@ O sorteio é **de verdade**: a roleta gira até parar exatamente na fatia sortea
 cupom que ela entrega funciona. Não existe fatia de "não ganhou".
 
 ### Brindes, se um dia você quiser dar
-A roleta hoje só entrega desconto e frete grátis. O site já sabe lidar com brinde: basta
-criar um cupom do tipo `brinde` em `cupons` e incluir na roleta. Ele não abate valor —
-aparece no resumo do pedido como **cortesia**, para você separar e mandar junto.
+A roleta hoje só entrega desconto e frete grátis. O site já sabe lidar com brinde: crie
+um cupom do tipo **Brinde** e inclua numa fatia. Ele não abate valor — aparece no resumo
+do pedido como **cortesia**, para você separar e mandar junto.
 
 ### Mudar os prêmios
-Edite a lista `premios`. Cada `cupom` precisa existir no bloco `cupons` logo acima —
-senão a fatia não entrega nada. Para trocar o desconto de um cupom, mexa lá, não aqui.
+No painel: **Frete, cupons e roleta** → **Roleta de prêmios** → **Fatias da roleta**.
+
+O campo **Cupom que ela ganha** precisa ser um código que existe na lista de cupons —
+senão a fatia não entrega nada. Para trocar o desconto, mexa no cupom, não na fatia.
 
 O número de fatias é livre: 8, 10 ou 12 funcionam bem. Acima de 14 o texto começa a ficar
 apertado. Rótulos curtos ("10% OFF") ficam melhores que longos.

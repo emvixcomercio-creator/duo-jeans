@@ -1,0 +1,309 @@
+# ============================================================
+#  DUO JEANS — PAINEL DA LOJA
+#  ------------------------------------------------------------
+#  Este arquivo diz ao painel quais campos existem e onde salvar.
+#  Quem edita a loja no dia a dia não precisa mexer aqui.
+# ============================================================
+
+backend:
+  name: github
+  repo: emvixcomercio-creator/duo-jeans
+  branch: master
+
+# Salva direto no site publicado, sem fila de aprovação.
+publish_mode: simple
+
+locale: pt
+
+# Onde ficam as fotos enviadas pelo painel.
+media_folder: assets/img/produtos
+public_folder: assets/img/produtos
+
+collections:
+
+  # ----------------------------------------------------------
+  #  AS PEÇAS
+  # ----------------------------------------------------------
+  - name: catalogo
+    label: Catálogo
+    files:
+      - name: produtos
+        label: Peças da loja
+        file: dados/produtos.json
+        description: >-
+          Cada bloco é uma peça. Clique para abrir e editar. Para cadastrar
+          uma peça nova, use o botão de adicionar no fim da lista.
+        fields:
+          - name: produtos
+            label: Peças
+            label_singular: peça
+            widget: list
+            collapsed: true
+            summary: "{{fields.nome}} — R$ {{fields.preco}}"
+            fields:
+              - name: nome
+                label: Nome da peça
+                widget: string
+
+              - name: id
+                label: Código (id)
+                widget: string
+                pattern:
+                  - "^[a-z0-9]+(-[a-z0-9]+)*$"
+                  - "Use só letras minúsculas, números e hífen. Sem espaço e sem acento."
+                hint: >-
+                  Identificador único, ex.: cargo-milena. NÃO mude depois de
+                  publicado — é o que liga a peça ao link dela e às fotos.
+
+              - name: categoria
+                label: Categoria
+                widget: select
+                options:
+                  - { label: "Calças", value: calcas }
+                  - { label: "Shorts", value: shorts }
+                  - { label: "Saias", value: saias }
+                  - { label: "Jaquetas", value: jaquetas }
+                  - { label: "Macaquinhos", value: macaquinhos }
+
+              - name: modelagem
+                label: Modelagem
+                widget: string
+                hint: "Ex.: Wide leg, Mom, Flare. Aparece no filtro do catálogo."
+
+              - name: lavagem
+                label: Lavagem
+                widget: string
+                hint: "Ex.: Azul claro, Azul médio, Preto."
+
+              - name: preco
+                label: Preço de venda (R$)
+                widget: number
+                value_type: float
+                min: 1
+                step: 0.01
+                hint: "Use ponto para os centavos: 269.90"
+
+              - name: precoDe
+                label: Preço antigo, riscado (R$)
+                widget: number
+                value_type: float
+                required: false
+                step: 0.01
+                hint: "Só preencha se a peça estiver em promoção."
+
+              - name: tamanhos
+                label: Tamanhos que existem
+                widget: list
+                field:
+                  name: tamanho
+                  label: Tamanho
+                  widget: number
+                  value_type: int
+
+              - name: esgotados
+                label: Tamanhos esgotados
+                widget: list
+                required: false
+                field:
+                  name: tamanho
+                  label: Tamanho
+                  widget: number
+                  value_type: int
+                hint: >-
+                  Ficam riscados na página e não podem ser comprados.
+                  Deixe vazio se tem todos os tamanhos.
+
+              - name: imagens
+                label: Fotos
+                widget: list
+                field:
+                  name: imagem
+                  label: Foto
+                  widget: image
+                hint: >-
+                  A primeira foto é a que aparece no catálogo.
+                  Use fotos em pé, na proporção 3x4.
+
+              - name: novidade
+                label: Mostrar em Novidades
+                widget: boolean
+                default: false
+
+              - name: destaque
+                label: Mostrar na página inicial
+                widget: boolean
+                default: false
+
+              - name: badge
+                label: Selo na foto
+                widget: string
+                required: false
+                hint: 'Ex.: Mais vendida, Últimas peças. Vazio = sem selo.'
+
+              - name: descricao
+                label: Descrição
+                widget: text
+
+              - name: detalhes
+                label: Detalhes (lista de tópicos)
+                widget: list
+                required: false
+                field:
+                  name: item
+                  label: Detalhe
+                  widget: string
+
+              - name: composicao
+                label: Composição
+                widget: string
+                hint: "Ex.: 100% algodão"
+
+              - name: cuidados
+                label: Cuidados
+                widget: text
+
+  # ----------------------------------------------------------
+  #  REGRAS DE VENDA
+  # ----------------------------------------------------------
+  - name: loja
+    label: Frete, cupons e roleta
+    files:
+      - name: regras
+        label: Regras de venda
+        file: dados/loja.json
+        fields:
+
+          - name: frete
+            label: Frete
+            widget: object
+            fields:
+              - name: gratisAcima
+                label: Frete grátis a partir de (R$)
+                widget: number
+                value_type: float
+                hint: "Use 0 para desligar o frete grátis."
+
+              - name: prazoTexto
+                label: Texto do prazo
+                widget: string
+
+              - name: tabela
+                label: Valor por região
+                widget: list
+                collapsed: true
+                summary: "{{fields.nome}} — R$ {{fields.valor}}"
+                fields:
+                  - name: nome
+                    label: Região
+                    widget: string
+                  - name: digitos
+                    label: Primeiro dígito do CEP
+                    widget: list
+                    field:
+                      name: digito
+                      label: Dígito
+                      widget: string
+                    hint: "Ex.: Sudeste usa 0, 1, 2 e 3."
+                  - name: valor
+                    label: Valor (R$)
+                    widget: number
+                    value_type: float
+                    step: 0.01
+                  - name: prazo
+                    label: Prazo
+                    widget: string
+
+              - name: retirada
+                label: Retirada em mãos
+                widget: object
+                fields:
+                  - name: ativo
+                    label: Oferecer retirada
+                    widget: boolean
+                  - name: texto
+                    label: Nome da opção
+                    widget: string
+                  - name: detalhe
+                    label: Explicação
+                    widget: string
+
+          - name: cupons
+            label: Cupons de desconto
+            widget: list
+            collapsed: true
+            summary: "{{fields.codigo}} — {{fields.descricao}}"
+            fields:
+              - name: codigo
+                label: Código do cupom
+                widget: string
+                pattern:
+                  - "^[A-Z0-9]{3,20}$"
+                  - "Use só LETRAS MAIÚSCULAS e números, de 3 a 20 caracteres."
+                hint: "É o que a cliente digita no checkout. Ex.: PRIMEIRA"
+
+              - name: tipo
+                label: Tipo
+                widget: select
+                options:
+                  - { label: "Desconto em porcentagem", value: percentual }
+                  - { label: "Frete grátis", value: frete }
+                  - { label: "Brinde (não abate valor)", value: brinde }
+
+              - name: valor
+                label: Valor
+                widget: number
+                value_type: float
+                step: 0.01
+                hint: >-
+                  Porcentagem em decimal: 0.10 é 10%.
+                  Frete grátis use 1. Brinde use 0.
+
+              - name: descricao
+                label: Como aparece para a cliente
+                widget: string
+
+          - name: roleta
+            label: Roleta de prêmios
+            widget: object
+            fields:
+              - name: ativo
+                label: Roleta ligada
+                widget: boolean
+
+              - name: segundosParaAbrir
+                label: Segundos até aparecer
+                widget: number
+                value_type: int
+                min: 1
+
+              - name: pedirEmail
+                label: Pedir o e-mail antes de girar
+                widget: boolean
+
+              - name: validadeHoras
+                label: Horas de validade do prêmio
+                widget: number
+                value_type: int
+                min: 1
+
+              - name: premios
+                label: Fatias da roleta
+                widget: list
+                collapsed: true
+                summary: "{{fields.rotulo}} (peso {{fields.peso}})"
+                hint: >-
+                  Toda fatia precisa dar um prêmio de verdade — nenhuma é
+                  "não ganhou". O peso define a chance: peso maior sai mais vezes.
+                fields:
+                  - name: rotulo
+                    label: Texto na fatia
+                    widget: string
+                  - name: cupom
+                    label: Cupom que ela ganha
+                    widget: string
+                    hint: "Precisa ser um código que existe na lista de cupons acima."
+                  - name: peso
+                    label: Peso (chance)
+                    widget: number
+                    value_type: int
+                    min: 1

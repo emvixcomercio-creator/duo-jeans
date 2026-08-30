@@ -38,11 +38,30 @@ function carregarDados() {
     throw new Error('Arquivo não encontrado: ' + arquivo);
   };
 
-  const src = ler('assets/js/produtos.js') + '\n' + ler('assets/js/config.js') +
-              '\nreturn { PRODUTOS: PRODUTOS, CONFIG: CONFIG };';
-  const resultado = new Function(src)();
-  CATALOGO = resultado.PRODUTOS;
-  CONFIGURACAO = resultado.CONFIG;
+  /* Os preços e as regras de venda vêm dos arquivos de dados —
+     os MESMOS que o site e o painel usam. É isso que garante que
+     o valor cobrado aqui não depende do que o navegador mandou. */
+  CATALOGO = JSON.parse(ler('dados/produtos.json')).produtos;
+
+  const loja = JSON.parse(ler('dados/loja.json'));
+
+  /* A identidade da loja e o gateway continuam em config.js:
+     são dados sensíveis, fora do alcance do painel. */
+  CONFIGURACAO = new Function(ler('assets/js/config.js') + '\nreturn CONFIG;')();
+
+  CONFIGURACAO.frete  = loja.frete;
+  CONFIGURACAO.roleta = loja.roleta;
+
+  /* No arquivo os cupons são lista; aqui procuramos por código. */
+  CONFIGURACAO.cupons = {};
+  (loja.cupons || []).forEach(function (c) {
+    if (!c || !c.codigo) return;
+    CONFIGURACAO.cupons[String(c.codigo).trim().toUpperCase()] = {
+      tipo: c.tipo,
+      valor: c.valor,
+      descricao: c.descricao
+    };
+  });
 }
 
 /* ------------------------------------------------------------

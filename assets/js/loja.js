@@ -905,11 +905,15 @@ function abrirGuiaMedidas() {
    INÍCIO
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  Layout.montar();
-  ligarEventos();
-  Sacola.atualizar();
-  Favoritos.atualizarContador();
-  Animacao.iniciar();
-  U.aplicarMascaras();
-  if (typeof aoCarregarPagina === 'function') aoCarregarPagina();
+  /* O catálogo e as regras de venda vivem em dados/*.json.
+     Nada pode ser montado antes deles chegarem. */
+  Dados.pronto().then(() => {
+    Layout.montar();
+    ligarEventos();
+    Sacola.atualizar();
+    Favoritos.atualizarContador();
+    Animacao.iniciar();
+    U.aplicarMascaras();
+    if (typeof aoCarregarPagina === 'function') aoCarregarPagina();
+  });
 });

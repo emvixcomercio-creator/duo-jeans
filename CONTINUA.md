@@ -74,10 +74,13 @@ A pasta `catálogo/` (29 MB de originais) está no `.gitignore`: não vai para o
 · `pedido.html` · `favoritos.html` · `marca.html` · `ajuda.html` · `seguranca.html`
 · `privacidade.html` · `termos.html` · `conferencia.html`
 
-### Arquivos que o dono da loja edita
-- `assets/js/config.js` — dados da loja, pagamento, frete, cupons, roleta
-- `assets/js/produtos.js` — o catálogo
+### Dados da loja (editados pelo painel em `/admin`)
+- `dados/produtos.json` — as 40 peças
+- `dados/loja.json` — frete, cupons e roleta
 - `assets/img/produtos/` — as fotos
+
+### Arquivos que só o dono edita, na mão
+- `assets/js/config.js` — identidade da loja e **pagamento** (fora do painel de propósito)
 
 ### Arquivos de código (normalmente não se mexe)
 - `assets/js/loja.js` — cabeçalho, rodapé, sacola, catálogo, utilidades, ícones SVG
@@ -85,6 +88,8 @@ A pasta `catálogo/` (29 MB de originais) está no `.gitignore`: não vai para o
 - `assets/js/checkout.js` — checkout em 3 passos e página do pedido
 - `assets/js/pix.js` — gerador de BR Code (Pix) e codificador de QR próprio
 - `assets/js/roleta.js` — roleta de prêmios
+- `assets/js/dados.js` — carrega os JSON antes da loja montar a tela
+- `admin/config.yml` — os campos do painel
 - `netlify/functions/criar-pagamento.js` — cria a cobrança no gateway (roda no servidor)
 - `trocar-dominio.py` — troca o endereço do site em todos os arquivos de uma vez
 
@@ -114,6 +119,44 @@ a capa genérica da loja, não a foto da peça. O robô que monta o preview não
 JavaScript, e o produto só é carregado pelo JS. Resolver exige gerar uma página estática
 por produto (40 arquivos, script de build) ou uma função no Netlify. **Não foi feito** —
 decidir se vale.
+
+---
+
+## Painel da loja (`/admin`)
+
+A cliente edita a loja por formulário, sem abrir arquivo. Usa **Decap CMS 3.15.1**
+(CDN jsdelivr), backend GitHub, `publish_mode: simple` — salva direto no `master`.
+
+**O que mudou por baixo:** o catálogo e as regras de venda saíram do código e viraram
+dados. `PRODUTOS` não é mais um `const` em `produtos.js`; vem de `dados/produtos.json`
+via `fetch`. `CONFIG.frete`, `CONFIG.cupons` e `CONFIG.roleta` vêm de `dados/loja.json`.
+Quem faz isso é `assets/js/dados.js`, e o boot da loja e da roleta agora espera
+`Dados.pronto()` antes de montar a tela.
+
+A função de pagamento lê os **mesmos** JSON (antes ela avaliava o `produtos.js` como
+código). Isso preserva a proteção de preço: testado de novo depois da mudança — pedido
+com preço adulterado para R$ 1,00 foi cobrado R$ 256,40.
+
+**No JSON os cupons são lista** (`[{codigo, tipo, valor, descricao}]`), porque o painel
+não edita bem objeto de chave variável. O carregador converte para o objeto por código
+que o resto do código espera. A função de pagamento faz a mesma conversão.
+
+> ⚠️ **O painel ainda não funciona.** O login do GitHub precisa de um provedor OAuth,
+> que o **Netlify** oferece pronto. No GitHub Pages a tela abre mas o login falha.
+> Passo a passo na seção 5.4 do `LEIA-ME.md`. É mais um motivo para migrar.
+
+> ⚠️ **Cuidado ao mexer no `admin/config.yml`:** o painel reescreve o arquivo inteiro
+> ao salvar. Campo que existe no JSON e não está declarado no `config.yml` **é apagado**.
+> Conferí campo a campo: hoje a cobertura está completa. Se acrescentar campo no JSON,
+> declare no painel também.
+
+**Armadilha de rascunho:** o Decap guarda rascunho no navegador. Um rascunho vazio preso
+faz o painel abrir com tudo em branco — e publicar assim apaga o conteúdo bom. Perdi um
+tempo com isso no teste. Está documentado na seção 5.5 do `LEIA-ME.md`.
+
+**Testado:** painel lê as 40 peças, campos em português, categoria correta; salvamento
+gravou no arquivo e a **única** diferença foi o campo alterado — cupons, fatias, faixas
+de frete e objetos aninhados preservados; a loja leu o valor novo.
 
 ---
 
