@@ -5,6 +5,39 @@
 
 ---
 
+## ▶ ONDE PARAMOS — 30/08/2026
+
+Tudo commitado e publicado. Último commit: `715a6cb`.
+Nada pela metade, nada quebrado. O site no ar segue funcionando normalmente.
+
+**Feito nesta sessão:**
+1. Preview de compartilhamento (WhatsApp/Instagram) — capa própria + meta tags
+2. Painel da loja em `/admin` — a cliente edita sem abrir arquivo
+3. Migração para o Netlify preparada e testada
+
+**O próximo passo depende do cliente, não de código:**
+
+| Passo | Quem |
+|---|---|
+| Registrar domínio no registro.br | cliente |
+| Criar conta Netlify e importar o repositório | cliente |
+| Travar limite de gastos no Netlify | cliente |
+| Ligar OAuth do GitHub (faz o painel autenticar) | cliente |
+| Token do Mercado Pago na variável de ambiente | cliente |
+| Rodar `trocar-dominio.py` e conferir tudo no ar | eu |
+
+Guia completo e na ordem certa: **seção 2 do `LEIA-ME.md`**.
+
+> Não precisa esperar o domínio para criar o site no Netlify. Fazendo 2.1 a 2.4, a
+> loja já funciona de verdade no endereço `.netlify.app` — com pagamento e painel —
+> e o domínio entra depois sem retrabalho.
+
+**Duas coisas hoje só funcionam depois do Netlify:**
+- O painel `/admin` abre, mas o login falha (precisa do OAuth)
+- Cartão e boleto (a função de pagamento não roda no GitHub Pages)
+
+---
+
 ## Onde tudo está
 
 | O quê | Onde |
