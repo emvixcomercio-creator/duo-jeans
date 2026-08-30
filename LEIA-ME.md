@@ -233,16 +233,61 @@ Isso é o que sustenta a credibilidade da loja:
 
 ## 9. Divulgação no Instagram
 
-O link da bio deve apontar para páginas específicas, não sempre para a home:
+O endereço da loja hoje é:
 
-- Coleção completa → `duojeans.com.br/produtos.html`
-- Novidades → `duojeans.com.br/produtos.html?c=novidades`
-- Só calças → `duojeans.com.br/produtos.html?c=calcas`
-- Promoções → `duojeans.com.br/produtos.html?c=promocoes`
-- Uma peça específica → `duojeans.com.br/produto.html?id=cargo-milena`
+```
+https://emvixcomercio-creator.github.io/duo-jeans/
+```
+
+O link da bio deve apontar para páginas específicas, não sempre para a home
+(troque a parte de cima pelo endereço acima):
+
+- Coleção completa → `/produtos.html`
+- Novidades → `/produtos.html?c=novidades`
+- Só calças → `/produtos.html?c=calcas`
+- Promoções → `/produtos.html?c=promocoes`
+- Uma peça específica → `/produto.html?id=cargo-milena`
 
 Nos stories de uma peça, use o link direto dela: a cliente cai na página certa e
 compra em dois toques, em vez de ter que procurar no catálogo.
+
+### Como o link aparece quando alguém compartilha
+
+Ao colar o link no WhatsApp, no Direct ou no Facebook, aparece um cartão com a
+capa da marca, o nome da loja e uma frase. Essa capa é o arquivo
+`assets/img/og-capa.jpg` (1200 × 630 px).
+
+Para trocar a capa, substitua esse arquivo mantendo **o mesmo nome e o mesmo
+tamanho**. Depois de publicar, limpe o cache do preview em
+<https://developers.facebook.com/tools/debug/> — senão o WhatsApp continua
+mostrando a capa antiga por dias.
+
+> **Atenção:** ao compartilhar o link de **uma peça específica**
+> (`/produto.html?id=...`), o cartão mostra a capa geral da loja, e não a foto
+> daquela peça. Isso é uma limitação de site estático: o robô que monta o
+> preview não executa JavaScript, então ele não chega a saber qual peça é.
+> O link funciona normalmente para a cliente — só a miniatura fica genérica.
+
+### Trocar o domínio
+
+O preview do WhatsApp exige endereço **absoluto** (começando com `https://`).
+Por isso o endereço da loja está escrito dentro de cada página, do `sitemap.xml`
+e do `robots.txt`. Quando a loja mudar de endereço, não saia editando arquivo por
+arquivo — rode:
+
+```bash
+python trocar-dominio.py https://duojeans.com.br
+```
+
+O script troca tudo de uma vez e mostra o que mudou. Rodando sem nada depois do
+nome, ele só informa qual é o endereço atual:
+
+```bash
+python trocar-dominio.py
+```
+
+Depois publique normalmente (`git add -A && git commit -m "..." && git push`) e
+limpe o cache do preview no link do Facebook citado acima.
 
 ---
 
