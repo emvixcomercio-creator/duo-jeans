@@ -77,8 +77,7 @@ travado, no pior caso o site sai do ar por um tempo — em vez de virar fatura.
 
 ### 2.3. Ligue o painel
 
-**Site configuration** → **Access & security** → **OAuth** → **Install provider** →
-**GitHub**. Detalhes na seção 5.4.
+Já está ligado — o login é hospedado no próprio site. Detalhes na seção 5.4.
 
 ### 2.4. Ligue o pagamento
 
@@ -203,17 +202,28 @@ A loja atualiza em cerca de um minuto.
 Abra a peça e clique no **×** do bloco dela, ou marque todos os tamanhos como
 esgotados se for coisa temporária.
 
-### 5.4. Ligar o painel (uma vez só)
+### 5.4. Como o login do painel funciona
 
-O painel guarda as mudanças no repositório do GitHub, então precisa de um login.
-Depois que o site estiver no Netlify:
+**Já está ligado e funcionando.** Você entra em `duojeans.com.br/admin` com a sua
+conta do GitHub.
 
-1. No Netlify, abra o site → **Site configuration** → **Access & security** →
-   **OAuth** → **Install provider** → **GitHub**
-2. A pessoa que vai usar o painel precisa de uma conta no GitHub (grátis) e de
-   acesso ao repositório `emvixcomercio-creator/duo-jeans`:
-   no GitHub, **Settings** → **Collaborators** → **Add people**
-3. Pronto: `https://seu-site/admin` → **Entrar com o GitHub**
+O login é hospedado no próprio site, em duas funções
+(`netlify/functions/oauth-auth.js` e `oauth-callback.js`). Não depende de nenhum
+serviço de terceiro além do próprio GitHub.
+
+Peguei esse caminho porque o atalho do Netlify (instalar um "provedor OAuth" no
+painel deles) some e muda de lugar a cada reforma da interface.
+
+**Para dar acesso a outra pessoa** — a cliente, por exemplo:
+
+1. Ela cria uma conta grátis no [github.com](https://github.com)
+2. No repositório: **Settings** → **Collaborators** → **Add people**
+3. Pronto — ela entra em `duojeans.com.br/admin` com a conta dela
+
+**Se um dia precisar trocar as chaves:** elas ficam em
+[github.com/settings/developers](https://github.com/settings/developers) →
+**Duo Jeans Painel**, e são lidas das variáveis `GITHUB_OAUTH_CLIENT_ID` e
+`GITHUB_OAUTH_CLIENT_SECRET` no Netlify.
 
 ### 5.5. Se o painel abrir com os campos vazios
 

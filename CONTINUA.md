@@ -5,59 +5,66 @@
 
 ---
 
-## ▶ ONDE PARAMOS — 30/08/2026 (madrugada)
+## ▶ ONDE PARAMOS — 30/08/2026
 
-### A LOJA ESTÁ NO AR EM https://duojeans.com.br
-
-Migração para o Netlify **concluída**. Domínio próprio funcionando com HTTPS.
+### A LOJA ESTÁ NO AR E O PAINEL FUNCIONA
 
 | | |
 |---|---|
-| Site | https://duojeans.com.br (e duojeans.netlify.app) |
+| Loja | **https://duojeans.com.br** |
+| Painel | **https://duojeans.com.br/admin** (login pelo GitHub — **funcionando**) |
 | Netlify | time **Emvix**, projeto **duojeans** |
 | Project ID | `c2af1b1f-03bd-40f2-ba6f-943b9aa35395` |
-| Conta | Edson Oliveira — emvixcomercio@gmail.com |
-| Domínio | registro.br, DNS próprio deles (`a.auto.dns.br`) |
+| Conta Netlify | Edson Oliveira — emvixcomercio@gmail.com |
+| Domínio | registro.br · DNS deles (`a.auto.dns.br`) |
 | DNS | A `duojeans.com.br` → `75.2.60.5` · CNAME `www` → `duojeans.netlify.app` |
+| OAuth App | "Duo Jeans Painel" · Client ID `Ov23likKDtbb8CPWgqfG` |
 
-**Verificado no ar:** 40 peças, página de produto (R$ 269,90 com R$ 319,90 riscado),
-checkout monta, função de pagamento responde, os 7 cabeçalhos de segurança ativos
-(clickjacking testado e bloqueando de verdade), cache dos dados revalidando,
-`og:url` e capa corretos nas 8 páginas públicas, 4 páginas privadas sem preview
-e com noindex, `www` redirecionando, HTTPS válido, nenhuma imagem quebrada.
+**Feito nesta sessão:** migração completa para o Netlify, domínio próprio com HTTPS,
+login do painel hospedado no próprio site, selo do Netlify removido, e a correção do
+bug que impedia salvar o catálogo.
 
-### FALTAM DUAS COISAS
+**Verificado no ar:** 40 peças, produto, checkout, roleta, função de pagamento,
+os 7 cabeçalhos de segurança, cache dos dados revalidando, preview do link nas 8
+páginas públicas, 4 privadas com noindex, `www` redirecionando.
 
-**1. Login do painel `/admin`** — a tela abre, o login não funciona.
-Precisa de um provedor OAuth do GitHub. **Não dá para fazer pela API** (conferi:
-189 métodos e 19 serviços, não está em nenhum) — só pela interface do Netlify, em
-`app.netlify.com/projects/duojeans/configuration/oauth` (rolar até o rodapé).
-Se não houver a seção lá, o caminho é criar um OAuth App em
-github.com/settings/developers com callback `https://api.netlify.com/auth/done`
-e colar Client ID + Secret no Netlify.
+### FALTA — e só isso bloqueia a venda
 
-**2. Cartão e boleto** — falta `MERCADOPAGO_ACCESS_TOKEN` nas variáveis de ambiente.
-A função responde corretamente *"Gateway não configurado"*. Esse eu **consigo**
-configurar pela CLI (`netlify env:set`) assim que o cliente passar o token.
-Combinado: começar com o token de **teste** (`TEST-`), validar a compra inteira, e
-o cliente coloca o de produção depois — token de produção não deve passar pelo chat.
+**1. Token do Mercado Pago** — sem ele não há cartão nem boleto. A função responde
+corretamente *"Gateway não configurado"*. **Eu configuro pela CLI** (`netlify env:set`)
+assim que o cliente passar o token. Combinado: começar pelo de **teste** (`TEST-`),
+validar a compra inteira, e só depois o de produção — token de produção não deve
+passar pelo chat.
 
-### AINDA PENDENTE (do cliente, de antes)
-- Dados reais no `config.js`: CNPJ, endereço, e-mail, WhatsApp, Instagram
-- Revisar preços peça por peça e marcar esgotados
-- Validar o agrupamento das fotos em `conferencia.html`
+**2. Dados reais no `config.js`** — CNPJ, endereço, e-mail, WhatsApp, Instagram.
+Loja sem CNPJ visível derruba a credibilidade, que é a preocupação central do cliente.
 
-### PEQUENAS PENDÊNCIAS TÉCNICAS
-- **Desligar o GitHub Pages** (Settings → Pages → Source: None). Continua servindo
-  a mesma loja num segundo endereço, o que divide reputação no Google.
+**3. Revisar preços** peça por peça e marcar tamanhos esgotados — agora pelo painel.
+
+**4. Validar `conferencia.html`** — o agrupamento das 74 fotos em 40 produtos.
+
+### HIGIENE PENDENTE
+- **Trocar o client secret do OAuth App.** O atual passou pelo chat. Gerar um novo em
+  github.com/settings/applications/3825887, apagar o antigo, e atualizar a variável
+  `GITHUB_OAUTH_CLIENT_SECRET` no Netlify. Não é urgente (sozinho ele não dá acesso
+  a nada), mas é o certo.
+- **Desligar o GitHub Pages** (GitHub → Settings → Pages → Source: None). Continua
+  servindo a mesma loja num segundo endereço e divide reputação no Google.
 - **Limpar o cache do preview** em developers.facebook.com/tools/debug/ — o link
-  já foi compartilhado com o endereço antigo.
+  circulou com o endereço antigo.
+- **"Expire user access tokens"** do OAuth App: se a cliente reclamar que o painel
+  desloga sozinho, desligar em Optional features. Nossa função não renova token.
 
-### ACESSO
-A CLI do Netlify está autenticada nesta máquina e a pasta está linkada ao projeto
-(`netlify status` confirma). Dá para gerenciar site, domínio, variáveis e deploys
-por linha de comando — foi assim que destravei o 401 (`sso_login`), renomeei o site
-e cadastrei o domínio.
+### ACESSO JÁ CONFIGURADO NESTA MÁQUINA
+- **Netlify CLI autenticada** e a pasta linkada ao projeto (`netlify status`).
+  Gerencia site, domínio, variáveis e deploys por linha de comando — foi assim que
+  destravei o 401, renomeei o site, cadastrei o domínio e tirei o selo.
+- **`gh` autenticado** como `emvixcomercio-creator` (escopos: gist, read:org, repo).
+
+> ⚠️ **Duas coisas só existem na interface, não na API** — verificado, não suposto:
+> instalar provedor OAuth no Netlify (189 métodos e 19 serviços conferidos) e criar
+> OAuth App no GitHub (4 endpoints testados, todos 404). Por isso o login do painel
+> foi resolvido com função própria, que não depende de nenhuma das duas.
 
 ---
 
