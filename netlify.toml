@@ -77,12 +77,15 @@
   [headers.values]
     Cache-Control = "no-store, must-revalidate"
 
-# Imagens podem ficar muito tempo em cache: quando você sobe uma
-# peça nova, o arquivo tem nome novo.
+# Fotos: 1 dia de cache no navegador.
+# Era 30 dias, o que fazia sentido quando foto nova sempre tinha nome
+# novo. Agora o painel envia foto — e se ela reenviar uma foto corrigida
+# com o MESMO nome, a cliente veria a antiga por um mês. Um dia é o
+# meio-termo: a CDN do Netlify continua servindo rápido.
 [[headers]]
   for = "/assets/img/*"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=86400"
 
 # JÁ o catálogo e os estilos você edita direto. Se ficarem em cache
 # longo, a cliente continua vendo o preço antigo por semanas.
@@ -103,9 +106,7 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# HTTP sempre vira HTTPS
-[[redirects]]
-  from = "http://duojeans.com.br/*"
-  to = "https://duojeans.com.br/:splat"
-  status = 301
-  force = true
+# HTTP -> HTTPS é o próprio Netlify que faz, para qualquer domínio que
+# você ligar no site (opção "Force HTTPS", em Domain management).
+# Aqui havia uma regra fixa para duojeans.com.br, um domínio que ainda
+# não existe: não fazia nada e sairia errada ao trocar de endereço.

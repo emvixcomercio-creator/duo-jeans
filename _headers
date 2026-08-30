@@ -19,7 +19,7 @@
 /pedido.html
   Cache-Control: no-store, must-revalidate
 /assets/img/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=86400
 /assets/js/*
   Cache-Control: public, max-age=0, must-revalidate
 /assets/css/*

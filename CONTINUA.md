@@ -185,6 +185,41 @@ esgotado e quantidade absurda.
 
 ---
 
+## Migração para o Netlify — preparada, falta executar
+
+Tudo do lado do código está pronto e testado. O que falta depende de conta:
+registrar o domínio e criar o site no Netlify. Guia completo na seção 2 do `LEIA-ME.md`.
+
+**Por que o Netlify virou obrigatório** (não é mais só melhoria):
+1. A função de pagamento não roda no GitHub Pages — sem cartão nem boleto
+2. Os cabeçalhos de segurança do `netlify.toml` são ignorados pelo Pages
+3. O login do painel `/admin` precisa do OAuth do GitHub, que o Netlify oferece pronto
+
+**Verificado com o Netlify CLI, rodando a função no runtime real:**
+- O pacote da função contém `dados/produtos.json`, `dados/loja.json` e
+  `assets/js/config.js` — o `included_files` funciona. Conferi o conteúdo do bundle
+  em `.netlify/functions-serve/`, porque rodando local a função acharia os arquivos
+  pelo diretório do projeto de qualquer jeito: passar no teste local **não** provaria
+  o empacotamento.
+- GET responde 405, tamanho inválido 400, quantidade absurda 400.
+
+**Três correições feitas no `netlify.toml`:**
+- Cache das fotos era 30 dias. Fazia sentido quando foto nova sempre tinha nome novo;
+  agora o painel envia foto, e reenviar uma corrigida com o mesmo nome deixaria a
+  cliente vendo a antiga por um mês. Passou para 1 dia.
+- Havia um redirect fixo `http://duojeans.com.br` — domínio que não existe, regra que
+  não fazia nada, e que o `trocar-dominio.py` **não** pegaria (o padrão só casa
+  `https://`). Removido: o Netlify já força HTTPS sozinho.
+- O `LEIA-ME` mandava publicar **arrastando a pasta**. Isso quebraria o painel: ele
+  grava no repositório, então o site precisa estar **conectado ao GitHub** para
+  receber as mudanças. Reescrito.
+
+**Ordem sugerida:** domínio no registro.br → site no Netlify conectado ao repositório
+→ travar limite de gastos → OAuth do GitHub → token do Mercado Pago →
+`trocar-dominio.py` → desligar o GitHub Pages.
+
+---
+
 ## Roleta de prêmios
 
 Abre sozinha 6 segundos depois que a cliente entra, **uma vez por pessoa**, e nunca no
@@ -259,10 +294,6 @@ longo faria a cliente ver preço velho por semanas. Já foi bug uma vez; não re
       Confirmar se a margem aguenta.
 
 ### Melhorias possíveis (nada urgente)
-- Hospedar no Netlify em vez do GitHub Pages. O Pages é só arquivo estático: não roda a
-  função de pagamento e ignora o `netlify.toml`, então **os cabeçalhos de segurança não
-  estão ativos no link atual**. O link de hoje serve para mostrar ao cliente; a loja de
-  verdade deve ir para o Netlify.
 - Formspree em `config.js` → `pedidos.endpointEmail`, para receber cada pedido por e-mail.
 - Seção de avaliações de clientes (não criei: seria inventar depoimento falso).
 - Preview por produto no WhatsApp (ver "O link compartilhado" acima).

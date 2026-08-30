@@ -36,22 +36,85 @@ Se precisar mexer por baixo do pano, os arquivos são estes:
 São as **fotos originais** da sessão (29 MB). O site **não usa** essa pasta — ele usa as
 versões otimizadas em `assets/img/produtos/`, já cortadas em 3x4 e leves para o celular.
 
-Guarde a pasta original como backup, mas **não precisa subir para o site**. Se estiver
-publicando por arrastar-e-soltar no Netlify, tire a pasta antes para o envio ficar rápido.
+Guarde a pasta original como backup. Ela está no `.gitignore`, então **não vai para o
+site** — nem precisa, e economiza 29 MB em cada publicação.
 
 ---
 
-## 2. Colocar no ar em 10 minutos (grátis)
+## 2. Publicar no Netlify
 
-1. Crie uma conta em [netlify.com](https://netlify.com).
-2. Arraste a pasta inteira `DUO JEAN` para a área de deploy do Netlify.
-3. Pronto — o site já está no ar com HTTPS e certificado SSL automático.
-4. Em **Domain settings**, aponte o seu domínio (ex.: `duojeans.com.br`).
+Hoje a loja está no GitHub Pages, que só entrega arquivos. Ele **não** roda a função
+de pagamento, **não** aplica os cabeçalhos de segurança e **não** autentica o painel.
+No Netlify as três coisas funcionam, no plano grátis.
 
-Depois, em `config.js`, troque o campo `dominio` para o seu domínio real.
+> ⚠️ **Não publique arrastando a pasta.** O painel salva as mudanças no repositório
+> do GitHub — se o site não estiver **conectado ao repositório**, a loja nunca recebe
+> o que a cliente editar. Tem que ser pelo caminho abaixo.
 
-> O arquivo `netlify.toml` já vai junto e aplica sozinho todos os cabeçalhos de
-> segurança (HSTS, CSP, proteção contra clickjacking).
+### 2.1. Conectar o site
+
+1. Crie a conta em [netlify.com](https://netlify.com) — entre **com o GitHub**, fica mais simples
+2. **Add new site** → **Import an existing project** → **GitHub**
+3. Escolha o repositório `emvixcomercio-creator/duo-jeans`
+4. Nas opções de build, deixe assim:
+   - **Branch to deploy:** `master`
+   - **Build command:** *(vazio)*
+   - **Publish directory:** `.`
+
+   O `netlify.toml` do projeto já diz o resto. Não precisa preencher mais nada.
+5. **Deploy site**
+
+Em um ou dois minutos o site sai no ar num endereço tipo
+`https://algum-nome.netlify.app`. Você pode renomear em **Site configuration** →
+**Change site name**.
+
+### 2.2. Trave o limite de gastos
+
+Antes de qualquer outra coisa: **Billing** → deixe o limite em zero / sem cartão.
+
+No plano grátis, um pico de tráfego fora do normal pode gerar cobrança. Com o limite
+travado, no pior caso o site sai do ar por um tempo — em vez de virar fatura.
+
+### 2.3. Ligue o painel
+
+**Site configuration** → **Access & security** → **OAuth** → **Install provider** →
+**GitHub**. Detalhes na seção 5.4.
+
+### 2.4. Ligue o pagamento
+
+Crie a variável `MERCADOPAGO_ACCESS_TOKEN` em **Site configuration** →
+**Environment variables**. Passo a passo na seção 3.
+
+### 2.5. Aponte o domínio
+
+1. Registre o domínio no [registro.br](https://registro.br) (o oficial do `.com.br`)
+2. No Netlify: **Domain management** → **Add a domain**
+3. Siga as instruções de DNS que ele mostrar
+4. Ligue o **Force HTTPS** (o certificado sai de graça e sozinho)
+5. No seu computador, rode:
+
+   ```bash
+   python trocar-dominio.py https://seudominio.com.br
+   git add -A && git commit -m "Novo endereco do site" && git push
+   ```
+
+   Isso acerta o preview do WhatsApp, o `sitemap.xml` e o `robots.txt`.
+   Sem esse passo, o cartão do link continua apontando para o endereço antigo.
+
+6. Em `config.js`, troque o campo `dominio`
+
+### 2.6. Confira que deu certo
+
+- [ ] A loja abre e mostra as 40 peças
+- [ ] `seu-site/admin` pede login do GitHub e **entra**
+- [ ] Uma compra de teste chega até a tela do Mercado Pago (seção 3)
+- [ ] O cadeado do navegador aparece (HTTPS)
+
+### 2.7. E o link antigo do GitHub Pages?
+
+Ele continua no ar mostrando a mesma loja, o que confunde o Google e divide a
+reputação do site. Depois que o Netlify estiver funcionando, desligue o Pages:
+no GitHub, **Settings** → **Pages** → em **Source**, escolha **None**.
 
 ---
 
@@ -63,14 +126,18 @@ processa o pagamento sem que o número do cartão passe pelo seu site.
 1. Crie a conta em [mercadopago.com.br/developers](https://www.mercadopago.com.br/developers).
 2. Em **Suas integrações → Credenciais de produção**, copie o **Access Token**
    (começa com `APP_USR-`).
-3. No Netlify: **Site settings → Environment variables → Add a variable**
+3. No Netlify: **Site configuration → Environment variables → Add a variable**
    - Key: `MERCADOPAGO_ACCESS_TOKEN`
    - Value: cole o token
 4. Em `config.js`, confirme que está assim:
    ```js
    provedor: 'mercadopago',
    ```
-5. Refaça o deploy. Pronto: cartão em até 3x, Pix e boleto.
+5. **Deploys → Trigger deploy → Clear cache and deploy site.** Variável de ambiente
+   nova só vale no deploy seguinte — sem esse passo o botão continua dizendo que o
+   pagamento não está ativo.
+
+Pronto: cartão em até 3x, Pix e boleto.
 
 **Nunca coloque o Access Token dentro de `config.js`.** Ele vive só na variável de
 ambiente do servidor — se ficar no site, qualquer pessoa consegue copiar.
