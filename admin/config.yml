@@ -133,11 +133,13 @@ collections:
               - name: novidade
                 label: Mostrar em Novidades
                 widget: boolean
+                required: false
                 default: false
 
               - name: destaque
                 label: Mostrar na página inicial
                 widget: boolean
+                required: false
                 default: false
 
               - name: badge

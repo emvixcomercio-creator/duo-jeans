@@ -130,7 +130,8 @@
         "Comprimento cropped"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "cargo-helena",
@@ -160,7 +161,8 @@
         "Modelagem ampla"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false
     },
     {
       "id": "cargo-valentina",
@@ -190,7 +192,8 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "wide-leg-carpinteiro-nina",
@@ -220,7 +223,8 @@
         "Perna ampla"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false
     },
     {
       "id": "wide-leg-bicolor-manu",
@@ -284,7 +288,8 @@
         "Modelagem flare"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "wide-leg-marmore-chiara",
@@ -312,7 +317,9 @@
         "Cinco bolsos"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "wide-leg-bruna",
@@ -341,7 +348,9 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "wide-caramelo-alice",
@@ -371,7 +380,8 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "wide-leg-isabela",
@@ -400,7 +410,9 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "wide-leg-ampla-julia",
@@ -428,7 +440,9 @@
         "Barra a fio"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "cargo-larissa",
@@ -456,7 +470,9 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "wide-leg-pregas-sofia",
@@ -485,7 +501,9 @@
         "Cintura alta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "wide-leg-clara-beatriz",
@@ -514,7 +532,9 @@
         "Cinco bolsos"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "wide-leg-musgo-clara",
@@ -543,7 +563,8 @@
         "Cinco bolsos"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "wide-leg-cinza-vitoria",
@@ -571,7 +592,9 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "cargo-antonia",
@@ -599,7 +622,9 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "bermuda-cargo-yasmin",
@@ -659,7 +684,9 @@
         "Comprimento curto"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "bermuda-clara-marina",
@@ -687,7 +714,9 @@
         "Bolso faca"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "short-preto-luiza",
@@ -716,7 +745,9 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "short-alto-luna",
@@ -747,7 +778,8 @@
         "Modelagem reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false
     },
     {
       "id": "short-claro-fernanda",
@@ -778,7 +810,8 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "short-carol",
@@ -806,7 +839,9 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "short-saint-gabriela",
@@ -837,7 +872,8 @@
         "Cinco bolsos"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "short-escuro-camila",
@@ -866,7 +902,9 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "short-bolso-amanda",
@@ -896,7 +934,9 @@
         "Modelagem solta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "short-mariana",
@@ -924,7 +964,9 @@
         "Cinco bolsos"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "short-cargo-nicole",
@@ -954,7 +996,8 @@
         "Barra reta"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "short-peaches-rebeca",
@@ -982,7 +1025,9 @@
         "Cinco bolsos"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "saia-grafite-elisa",
@@ -1012,7 +1057,8 @@
         "Forro interno"
       ],
       "composicao": "98% algodão · 2% elastano",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "saia-botoes-livia",
@@ -1041,7 +1087,8 @@
         "Forro interno"
       ],
       "composicao": "98% algodão · 2% elastano",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "saia-clara-bianca",
@@ -1069,7 +1116,9 @@
         "Comprimento curto"
       ],
       "composicao": "98% algodão · 2% elastano",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "novidade": false,
+      "destaque": false
     },
     {
       "id": "saia-caramelo-heloisa",
@@ -1100,7 +1149,8 @@
         "Comprimento curto"
       ],
       "composicao": "98% algodão · 2% elastano",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "saia-transpassada-duda",
@@ -1129,7 +1179,8 @@
         "Bolso frontal"
       ],
       "composicao": "98% algodão · 2% elastano",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     },
     {
       "id": "camisa-jeans-agatha",
@@ -1190,7 +1241,8 @@
         "Fecho traseiro"
       ],
       "composicao": "100% algodão",
-      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora."
+      "cuidados": "Lave do avesso, em água fria, com peças de cor semelhante. Não use secadora.",
+      "destaque": false
     }
   ]
 }
