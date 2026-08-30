@@ -86,6 +86,34 @@ A pasta `catálogo/` (29 MB de originais) está no `.gitignore`: não vai para o
 - `assets/js/pix.js` — gerador de BR Code (Pix) e codificador de QR próprio
 - `assets/js/roleta.js` — roleta de prêmios
 - `netlify/functions/criar-pagamento.js` — cria a cobrança no gateway (roda no servidor)
+- `trocar-dominio.py` — troca o endereço do site em todos os arquivos de uma vez
+
+---
+
+## O link compartilhado (preview do WhatsApp e do Instagram)
+
+Como o tráfego vem do Instagram, o cartão que aparece ao colar o link importa tanto
+quanto a home. Estado atual:
+
+- Capa própria da marca em `assets/img/og-capa.jpg` — 1200×630, 80 KB, gerada a partir
+  do logotipo (Cinzel + filetes dourados) com a foto do hero à direita.
+- `canonical` + Open Graph + Twitter Card nas **8 páginas públicas**.
+  `checkout`, `pedido`, `favoritos` e `conferencia` seguem sem preview e com `noindex`.
+- `sitemap.xml` e `robots.txt` apontam para o endereço que existe de verdade. Antes
+  apontavam para `duojeans.com.br`, que ainda **não foi registrado** — o Google falharia
+  ao ler o sitemap.
+
+> ⚠️ O preview exige URL **absoluta**, então o endereço está escrito dentro de cada
+> arquivo. Ao mudar de endereço (Netlify ou domínio próprio) rode
+> `python trocar-dominio.py https://novo-endereco` — troca tudo de uma vez.
+> Depois limpe o cache em <https://developers.facebook.com/tools/debug/>, senão o
+> WhatsApp mostra a capa antiga por dias.
+
+**Limitação conhecida:** compartilhar uma peça específica (`produto.html?id=...`) mostra
+a capa genérica da loja, não a foto da peça. O robô que monta o preview não executa
+JavaScript, e o produto só é carregado pelo JS. Resolver exige gerar uma página estática
+por produto (40 arquivos, script de build) ou uma função no Netlify. **Não foi feito** —
+decidir se vale.
 
 ---
 
@@ -140,8 +168,12 @@ carrinho**, válido por 24h.
 O código já sabe lidar com cupom do tipo `brinde` (não abate valor, aparece como
 "Cortesia" no resumo do pedido), caso queiram voltar com brindes depois.
 
-> Para testar a roleta: ela só aparece uma vez por navegador. Use aba anônima, ou
-> `localStorage.removeItem('duo_roleta')` no console.
+> **Para testar a roleta:** ela só aparece **uma vez por navegador**. Depois da primeira
+> vez fica gravada a chave `duo_roleta` e ela nunca mais abre naquele navegador — por
+> isso "entrei no site e a roleta não apareceu" quase sempre é isso, não um defeito.
+> Para ver de novo: abra uma **aba anônima**, ou rode no console (F12)
+> `localStorage.removeItem('duo_roleta')` e recarregue.
+> Verificado no site no ar em 30/08/2026: abre normalmente em navegador limpo.
 
 ---
 
@@ -190,6 +222,7 @@ longo faria a cliente ver preço velho por semanas. Já foi bug uma vez; não re
   verdade deve ir para o Netlify.
 - Formspree em `config.js` → `pedidos.endpointEmail`, para receber cada pedido por e-mail.
 - Seção de avaliações de clientes (não criei: seria inventar depoimento falso).
+- Preview por produto no WhatsApp (ver "O link compartilhado" acima).
 
 ---
 
