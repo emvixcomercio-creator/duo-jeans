@@ -5,4 +5,4 @@ Disallow: /pedido.html
 Disallow: /conferencia.html
 Disallow: /admin/
 
-Sitemap: https://emvixcomercio-creator.github.io/duo-jeans/sitemap.xml
+Sitemap: https://duojeans.com.br/sitemap.xml

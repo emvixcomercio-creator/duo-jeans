@@ -12,7 +12,7 @@ const CONFIG = {
     nome: 'Duo Jeans',
     slogan: 'Seu jeans. Seu jeito.',
     conceito: 'Denim feminino, essência atemporal.',
-    dominio: 'duojeans.com.br',                    // <<< TROCAR
+    dominio: 'duojeans.com.br',                    // registrado e no ar
 
     instagram: 'duojeans_',                        // <<< TROCAR (sem @)
     email: 'contato@duojeans.com.br',              // <<< TROCAR
