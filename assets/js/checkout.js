@@ -32,10 +32,25 @@ const Checkout = {
       Checkout.sacolaVazia();
       return;
     }
+    Checkout.aplicarPremioDaRoleta();
     Checkout.montarPagamentos();
     Checkout.ligarEventos();
     Checkout.atualizarResumo();
     Checkout.irPara(1);
+  },
+
+  /* Se a cliente ganhou algo na roleta e o prêmio ainda vale,
+     o cupom entra sozinho — ela não precisa lembrar do código. */
+  aplicarPremioDaRoleta() {
+    const g = U.ler('duo_roleta', null);
+    if (!g || !g.cupom) return;
+    if (g.expira && Date.now() > g.expira) return;
+    if (!CONFIG.cupons[g.cupom]) return;
+
+    Checkout.estado.cupom = g.cupom;
+    const campo = document.querySelector('[name="cupom"]');
+    if (campo) { campo.value = g.cupom; campo.readOnly = true; }
+    setTimeout(() => Aviso.mostrar('Seu prêmio da roleta já está aplicado: ' + g.rotulo), 700);
   },
 
   sacolaVazia() {
@@ -289,6 +304,8 @@ const Checkout = {
     corpo += linha('Subtotal', U.dinheiro(t.subtotal));
     if (t.desconto > 0)
       corpo += linha('Cupom ' + U.esc(Checkout.estado.cupom), '− ' + U.dinheiro(t.desconto), 'verde');
+    if (t.brinde)
+      corpo += linha('Cortesia', '<span class="verde">' + U.esc(t.brinde) + '</span>');
     corpo += linha('Entrega',
       Checkout.estado.entrega.tipo === 'retirada' ? '<span class="verde">Retirada</span>'
       : (!Checkout.estado.frete ? '<span class="texto-suave">calcular</span>'

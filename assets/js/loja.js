@@ -367,11 +367,13 @@ const Sacola = {
     const subtotal = itens.reduce((s, i) => s + i.subtotal, 0);
     const qtd = itens.reduce((s, i) => s + i.qtd, 0);
 
-    let desconto = 0, freteGratisCupom = false;
+    let desconto = 0, freteGratisCupom = false, brinde = null;
     if (o.cupom) {
       const c = CONFIG.cupons[o.cupom];
       if (c && c.tipo === 'percentual') desconto = subtotal * c.valor;
       if (c && c.tipo === 'frete') freteGratisCupom = true;
+      /* Brinde não abate valor: entra como item de cortesia no pedido */
+      if (c && c.tipo === 'brinde') brinde = c.descricao;
     }
 
     const baseFrete = subtotal - desconto;
@@ -383,7 +385,7 @@ const Sacola = {
     const descPix = CONFIG.pagamento.pix.desconto || 0;
 
     return {
-      itens, qtd, subtotal, desconto, frete, total,
+      itens, qtd, subtotal, desconto, frete, total, brinde,
       freteGratis: gratisPorValor || freteGratisCupom,
       totalPix: total * (1 - descPix),
       economiaPix: total * descPix,

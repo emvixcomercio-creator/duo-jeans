@@ -1798,3 +1798,214 @@
   margin: 1.6rem 0;
 }
 .cartao-destaque p:last-child { margin-bottom: 0; }
+
+/* ============================================================
+   ROLETA DE PRÊMIOS
+   ============================================================ */
+.roleta {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  display: grid;
+  place-items: center;
+  padding: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s, visibility .35s;
+}
+.roleta.aberta { opacity: 1; visibility: visible; }
+
+.roleta-fundo {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 15, 26, .78);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.roleta-caixa {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.2rem, 3vw, 2.6rem);
+  width: min(100%, 880px);
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+  background:
+    radial-gradient(120% 90% at 15% 0%, #1B3453 0%, var(--marinho) 55%, var(--marinho-escuro) 100%);
+  border: 1px solid rgba(185, 150, 83, .45);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-lg);
+  transform: translateY(18px) scale(.97);
+  transition: transform .4s cubic-bezier(.22, .61, .36, 1);
+}
+.roleta.aberta .roleta-caixa { transform: none; }
+
+.roleta-fechar {
+  position: absolute;
+  top: .7rem; right: .7rem;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  color: rgba(244, 237, 227, .6);
+  transition: var(--transicao);
+}
+.roleta-fechar:hover { background: rgba(244, 237, 227, .12); color: var(--creme); }
+.roleta-fechar svg { width: 17px; height: 17px; }
+
+/* ---- Disco ---- */
+.roleta-disco-area {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding-top: 14px;
+}
+.roleta-svg { width: 100%; max-width: 320px; height: auto; display: block; }
+
+.roleta-disco {
+  width: 100%;
+  transform: rotate(0deg);
+  transition: transform 4.8s cubic-bezier(.12, .78, .12, 1);
+  filter: drop-shadow(0 14px 34px rgba(0, 0, 0, .45));
+}
+
+/* Seta dourada no topo */
+.roleta-seta {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  width: 0; height: 0;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 22px solid var(--dourado);
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .5));
+}
+.roleta-seta::after {
+  content: '';
+  position: absolute;
+  top: -30px; left: -8px;
+  width: 16px; height: 16px;
+  background: var(--dourado);
+  border-radius: 50%;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, .25);
+}
+.roleta.rodando .roleta-seta { animation: setaTremendo .12s linear infinite; }
+@keyframes setaTremendo {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  50%      { transform: translateX(-50%) rotate(-7deg); }
+}
+
+/* ---- Lado do texto ---- */
+.roleta-lado .marca-duo   { font-size: 1.3rem; }
+.roleta-lado .filete      { margin-block: 1rem; }
+
+.roleta-texto {
+  font-size: .86rem;
+  line-height: 1.75;
+  color: rgba(244, 237, 227, .74);
+  max-width: 40ch;
+}
+
+.roleta-entrada {
+  background: rgba(255, 255, 255, .07);
+  border-color: rgba(244, 237, 227, .3);
+  color: var(--creme);
+}
+.roleta-entrada::placeholder { color: rgba(244, 237, 227, .42); }
+.roleta-entrada:focus {
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 3px rgba(185, 150, 83, .2);
+}
+.roleta .campo.tem-erro .roleta-entrada { border-color: #E2857C; }
+.roleta .erro-campo { color: #F0A9A2; }
+
+.roleta-dispensar {
+  display: block;
+  width: 100%;
+  margin-top: .9rem;
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(244, 237, 227, .5);
+  transition: color var(--transicao);
+}
+.roleta-dispensar:hover { color: var(--creme); }
+
+.roleta-aviso {
+  margin-top: 1rem;
+  font-size: .66rem;
+  line-height: 1.6;
+  color: rgba(244, 237, 227, .38);
+}
+
+/* ---- Cupom ganho ---- */
+.roleta-cupom {
+  display: flex;
+  align-items: stretch;
+  gap: .5rem;
+  margin-top: 1.2rem;
+}
+.roleta-cupom span {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: .85rem 1rem;
+  background: rgba(185, 150, 83, .14);
+  border: 1px dashed var(--dourado);
+  border-radius: var(--raio);
+  font-family: var(--serif);
+  font-size: 1rem;
+  letter-spacing: .18em;
+  color: var(--dourado-claro);
+}
+.roleta-cupom button {
+  padding: 0 1.1rem;
+  background: var(--dourado);
+  color: var(--marinho);
+  border-radius: var(--raio);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: var(--transicao);
+}
+.roleta-cupom button:hover { background: var(--dourado-claro); }
+
+.roleta-validade {
+  margin-top: .7rem;
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(244, 237, 227, .45);
+}
+
+/* ---- Celular ---- */
+@media (max-width: 720px) {
+  .roleta-caixa {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    text-align: center;
+    padding: 2rem 1.3rem 1.5rem;
+  }
+  .roleta-lado .marca { margin-inline: auto; }
+  .roleta-lado .filete { margin-inline: auto; }
+  .roleta-texto { margin-inline: auto; }
+  .roleta-svg { max-width: 240px; }
+  .roleta-lado .campo { text-align: left; }
+}
+@media (max-width: 420px) {
+  .roleta-svg { max-width: 200px; }
+  .roleta-texto { font-size: .8rem; }
+}
+
+/* Menos movimento para quem pediu menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .roleta-disco { transition-duration: 1.2s; }
+  .roleta.rodando .roleta-seta { animation: none; }
+}

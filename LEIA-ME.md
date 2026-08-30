@@ -136,6 +136,60 @@ Cupons ficam logo abaixo, em `cupons`. Já vêm três prontos: `DUO10`, `PRIMEIR
 
 ---
 
+## 6.1. Roleta de prêmios
+
+A roleta abre sozinha 6 segundos depois que a cliente entra, **uma vez por pessoa**, e
+nunca durante o checkout. Ela pede o e-mail (vira sua lista de contatos) e entrega um
+cupom que **aplica sozinho no carrinho**, válido por 24 horas.
+
+Tudo fica em `config.js`, no bloco `roleta`:
+
+```js
+roleta: {
+  ativo: true,              // false desliga a roleta
+  segundosParaAbrir: 6,     // demora para aparecer
+  pedirEmail: true,         // false deixa girar sem e-mail
+  validadeHoras: 24,        // por quanto tempo o prêmio vale
+
+  premios: [
+    { rotulo: '5% OFF', cupom: 'DUO5', peso: 16 },
+    ...
+  ]
+}
+```
+
+### Como funciona o sorteio
+O **peso** define a chance de cada fatia. Peso maior sai mais vezes. Com a configuração
+atual, as chances reais são:
+
+| Prêmio | Chance |
+|---|---|
+| 5% OFF | 38,1% |
+| 10% OFF | 22,2% |
+| Frete grátis | 19,0% |
+| Chaveiro | 5,6% |
+| 15% OFF | 4,8% |
+| Brinde surpresa | 4,8% |
+| Ecobag | 4,0% |
+| 20% OFF | 1,6% |
+
+O sorteio é **de verdade**: a roleta gira até parar exatamente na fatia sorteada, e todo
+cupom que ela entrega funciona. Não existe fatia de "não ganhou".
+
+### Antes de ligar, confirme que você consegue honrar
+Os prêmios de brinde (ecobag, chaveiro, brinde surpresa) aparecem no resumo do pedido como
+**cortesia** — você precisa separar e mandar junto. Se ainda não tem esses brindes,
+troque por descontos ou tire a fatia da lista.
+
+### Mudar os prêmios
+Edite a lista `premios`. Cada `cupom` precisa existir no bloco `cupons` logo acima —
+senão a fatia não entrega nada. Para trocar o desconto de um cupom, mexa lá, não aqui.
+
+O número de fatias é livre: 8, 10 ou 12 funcionam bem. Acima de 14 o texto começa a ficar
+apertado. Rótulos curtos ("10% OFF") ficam melhores que longos.
+
+---
+
 ## 7. O que já está feito de segurança
 
 Isso é o que sustenta a credibilidade da loja:
